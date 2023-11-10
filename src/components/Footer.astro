@@ -1,8 +1,12 @@
+---
+import Bio from '../components/Bio.astro';
+---
+
 <footer>
-  <span>
-    &copy; {new Date().getFullYear()} Your Blog.
-    Powered by <a href="https://astro.build" target="_blank" rel="noopener">Astro</a>.
-    Template by <a href="https://www.twitter.com/Charca" target="_blank" rel="noopener">Maxi Ferreira</a>.
+  <Bio />
+
+  <span class="lastLine">
+    &copy; {new Date().getFullYear()} rafaelcacilhas@gmail.com
   </span>
 </footer>
 
@@ -14,6 +18,13 @@
     max-width: 1400px;
     padding: 1em 2em;
     text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: ;
+  }
+  .lastLine{
     width: 100%;
   }
 </style>
