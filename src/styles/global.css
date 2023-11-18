@@ -7,6 +7,7 @@
   --secondary-color: #548e9b;
   --font-family-serif: Merriweather, serif;
   --font-family-sans: 'Fira Sans', sans-serif;
+  --icon-color: #000
 }
 
 :root.theme-dark {
@@ -14,6 +15,11 @@
   --text-main: #fff;
   --text-secondary: #ccc;
   --secondary-color: #548e9b;
+  --icon-color: #fff
+}
+
+svg {
+  fill: var(--icon-color);
 }
 
 *,
@@ -268,3 +274,4 @@ input[name='theme-toggle'] {
     margin: 1em 0;
   }
 }
+

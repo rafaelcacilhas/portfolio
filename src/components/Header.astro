@@ -6,8 +6,9 @@ const { currentPage = '' } = Astro.props;
 <header>
   <nav>
     <a class={currentPage === "" ? "selected" : ""} href='/'>home</a>
-    <a class={currentPage === "about" ? "selected" : ""} href='/about'>about</a>
+    <a class={currentPage === "projects" ? "selected" : ""} href='/projects'>projects</a>
     <a class={currentPage === "blog" ? "selected" : ""} href='/blog'>blog</a>
+    <a class={currentPage === "about" ? "selected" : ""} href='/about'>about</a>
     <div class="theme-toggle-container">
       <ThemeToggleButton client:load />
     </div>
