@@ -1,7 +1,6 @@
 ---
 import Curriculum from '../components/Curriculum.svelte';
 import Hero from '../components/Hero.svelte';
-import Posts from '../components/Posts.svelte';
 import Content from '../components/Content.svelte';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
@@ -14,7 +13,6 @@ allProjects = allProjects.sort((a, b) => new Date(b.frontmatter.publishDate).val
 
 let allPosts = await Astro.glob('../data/blog-posts/*.md');
 allPosts = allPosts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf());
-
 
 const projects = allProjects.map((item) => {
   return {

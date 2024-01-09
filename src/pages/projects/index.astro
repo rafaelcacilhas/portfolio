@@ -11,9 +11,9 @@ allProjects = allProjects.sort((a, b) => new Date(b.frontmatter.publishDate).val
 
 <BaseLayout title={title} description={description} permalink={permalink} currentPage="projects">
   <div class="container">
-    <h1 class="page-title">Blog</h1>
+    <h1 class="page-title">Projects</h1>
     {allProjects.map((project, index) => {
-      const href = `/blog/${project.file.split('/').pop()?.split('.').shift()}`;
+      const href = `/projects/${project.file.split('/').pop()?.split('.').shift()}`;
       return (
         <div>
           { index !== 0 && <hr /> }

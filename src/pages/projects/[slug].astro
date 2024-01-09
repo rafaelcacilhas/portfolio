@@ -4,7 +4,7 @@ import Bio from '../../components/Bio.astro';
 import getPostData from '../../utils/getPostData';
 
 export async function getStaticPaths() {
-  const posts = await Astro.glob('../../data/blog-posts/*.md');
+  const posts = await Astro.glob('../../data/projects/*.md');
   return posts.map(p => ({
     params: { slug: p.file.split('/').pop().split('.').shift() },
     props: { post: p },
@@ -28,7 +28,6 @@ const permalink = `${Astro.site.href}projects/${slug}`;
       <Content />
     </article>
     <hr />
-    <Bio />
   </div>
 </BaseLayout>
 

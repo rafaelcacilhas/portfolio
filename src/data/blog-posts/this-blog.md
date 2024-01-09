@@ -1,11 +1,15 @@
 ---
 title: This blog
-publishDate: 30 Nov 2021
+publishDate: 29 Oct 2023
 description: About this page.
 ---
 
 ![Illustration of woman using a meditation app](/assets/blog/casual-life-3d-meditation-crystal.webp)
 
-This post intentionally left blank.
+This is where I flex a little about this blog. An oportunity to showcase things I have been learning, trying and failing.
 
-Write what you want.
+This page was made using Astro and Svelte. Previous versions include React and Next ones.
+
+I will write more later.
+
+
