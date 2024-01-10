@@ -18,7 +18,8 @@ const projects = allProjects.map((item) => {
   return {
     title: item.frontmatter.title,
     description: item.frontmatter.description,
-    image:item.frontmatter.image
+    image:item.frontmatter.image,
+    link:item.frontmatter.link
    }
 }
 )
@@ -26,7 +27,8 @@ const projects = allProjects.map((item) => {
 const posts = allPosts.map((item) => {
   return {
     title: item.frontmatter.title,
-    description: item.frontmatter.description
+    description: item.frontmatter.description,
+    link:item.frontmatter.link
   }
 }
 )

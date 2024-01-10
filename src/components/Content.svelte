@@ -19,7 +19,7 @@
   <p class="sectionTitle">{title}</p>
 
   <div class="container">
-    <div class="main">
+    <a href={mainContent.link} class="main">
       {#if mainContent.image}
         <div class="mainImage">
           <img alt="main illustration for article" src={mainContent.image} />
@@ -30,11 +30,12 @@
         <p class="title">{mainContent.title}</p>
         <p class="description">{mainContent.description}</p>
       </div>
-    </div>
+    </a>
 
     <div class="others">
       {#each otherContents as otherContent}
-        <div
+        <a
+          href={otherContent.link}
           class={otherContent.image ? "otherContent" : "otherContentNoImage"}
         >
           {#if otherContent.image}
@@ -50,7 +51,7 @@
             <p class="title">{otherContent.title}</p>
             <p class="description">{otherContent.description}</p>
           </div>
-        </div>
+        </a>
       {/each}
 
       <div class="allProjects">
@@ -61,6 +62,9 @@
 </section>
 
 <style>
+  a {
+    text-decoration: none;
+  }
   .sectionTitle {
     font-size: 2em;
   }
@@ -105,9 +109,6 @@
     color: lightgray;
     font-size: medium;
     margin-top: 0;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
   .others {
     width: 50%;

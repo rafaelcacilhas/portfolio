@@ -3,6 +3,7 @@ title: Vision Root
 publishDate: 01 Mar 2021
 description: About Vision Root.
 image: "/assets/projects/visionRootLogo.png"
+link: "/projects/visionRoot"
 ---
 
 ![Illustration of woman using a computer receiving likes](/assets/projects/visionroot.png)
@@ -20,7 +21,7 @@ Down bellow I'll discuss in more details two projects that allowed me to learn a
 
 ---
 
-##  <a name="Appice"></a>Appice
+## <a name="Appice"></a>Appice
 
 Appice is an app that is focused on helping women keep their Apice cycles. The frontend was made using React Native, which allowed me to learn the basics of and made me learn the basics of mobile development and transfer my React knowledge into it.
 
@@ -39,8 +40,7 @@ which had vastly different access to data. Keycloak helps in doing these auths a
 
 The client had all the design figured out and it was quite a pleasure to reconstruct everything into a working app
 
-
-##  <a name="TremVip"></a>TremVip
+## <a name="TremVip"></a>TremVip
 
 ![TremVip](/assets/projects/tremvip.png)
 

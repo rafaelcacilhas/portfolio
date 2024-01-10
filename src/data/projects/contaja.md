@@ -3,6 +3,7 @@ title: Contaja
 publishDate: 30 Nov 2022
 description: Contaja is an Accounting company.
 image: "/assets/projects/contajaLogo.svg"
+link: "/projects/contaja"
 ---
 
 ![Illustration of woman using a meditation app](/assets/projects/contaja.svg)

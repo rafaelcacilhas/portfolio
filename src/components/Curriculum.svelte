@@ -3,6 +3,11 @@
 
 <section>
   <p class="title">Curriculum - or the road so far</p>
+  <p class="subtitle">
+    You can download it in
+    <a href="/assets/RafaelCacilhasCV-eng.pdf" download> English </a> or
+    <a href="/assets/RafaelCacilhasCV.pdf" download> Portuguese </a>
+  </p>
 
   <div class="container">
     <div class="section">
@@ -71,7 +76,7 @@
       <p class="sectionContent">Gaming</p>
       <p class="subsection">
         I have always been interest in making games so I have been studying this
-        subject along the years. When I was a teen I messed a lot with
+        subject along the years. When I was a teen I messed a lot with Flash /
         ActionScript and Im always studying the source-code of my favorite games
         . I also have some professional experience making little games in
         Javascript using a framework called Phaser.
@@ -83,6 +88,12 @@
 <style>
   .title {
     font-size: 2em;
+    margin-bottom: 0;
+  }
+  .subtitle {
+    font-size: 1em;
+    margin-top: 0;
+    margin-left: 3rem;
   }
   .container {
     border: 1px solid #f76982;

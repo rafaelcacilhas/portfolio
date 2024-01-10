@@ -2,6 +2,7 @@
 title: Scientific Simulations
 publishDate: 30 Nov 2021
 description: How I learned programming
+link: "blog/scientific-simulations"
 ---
 
 ![Illustration of woman using a meditation app](/assets/blog/casual-life-3d-meditation-crystal.webp)

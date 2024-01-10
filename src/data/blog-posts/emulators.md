@@ -2,6 +2,7 @@
 title: Emulators
 publishDate: 18 Nov 2023
 description: Something about emulators.
+link: "blog/emulators"
 ---
 
 ![Illustration of woman using a computer receiving likes](/assets/blog/casual-life-3d-likes.webp)

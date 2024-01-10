@@ -2,11 +2,12 @@
 title: C stuff
 publishDate: 30 Nov 2023
 description: My adventures on C land
+link: "blog/c-stuff"
 ---
 
 ![Illustration of woman using a meditation app](/assets/blog/casual-life-3d-meditation-crystal.webp)
 
-This is a post about C. And Doom. But I'll start with FORTRAN
+This is a draft post about C. And Doom. But I'll start with FORTRAN
 
 Trying to read C++ is hard. But why?
 
