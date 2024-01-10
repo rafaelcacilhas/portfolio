@@ -1,6 +1,6 @@
 ---
 title: Scientific Simulations
-publishDate: 30 Nov 2021
+publishDate: 30 Oct 2023
 description: How I learned programming
 link: "blog/scientific-simulations"
 ---

@@ -124,7 +124,6 @@
     padding: 1rem;
     margin-top: 0;
     width: 45%;
-    height: 45%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
