@@ -96,9 +96,9 @@
     margin-left: 3rem;
   }
   .container {
-    border: 1px solid #f76982;
+    border: 1px solid var(--primary-color);
     border-radius: 1rem;
-    background-color: #1f2937;
+    background-color: var(--background-secondary);
     padding: 1rem;
     width: 100%;
     display: flex;
@@ -106,7 +106,7 @@
   }
   .sectionTitle {
     font-size: larger;
-    color: #f76982;
+    color: var(--primary-color);
   }
   .sectionContent {
     font-size: large;

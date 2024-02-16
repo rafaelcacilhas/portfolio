@@ -15,10 +15,10 @@
   });
 </script>
 
-<section>
+<section class="container">
   <p class="sectionTitle">{title}</p>
 
-  <div class="container">
+  <div class="mainContainer">
     <a href={mainContent.link} class="main">
       {#if mainContent.image}
         <div class="mainImage">
@@ -69,6 +69,10 @@
     font-size: 2em;
   }
   .container {
+    min-width: 90%;
+    margin: 2em 0;
+  }
+  .mainContainer {
     width: 100%;
     margin-bottom: 1rem;
     display: flex;
@@ -144,6 +148,8 @@
   }
   .otherImage {
     width: 100%;
+    padding-top: 2rem;
+    max-width: 150px;
     height: 5rem;
     display: flex;
     justify-content: center;

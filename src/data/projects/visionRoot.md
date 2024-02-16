@@ -1,7 +1,7 @@
 ---
 title: Vision Root
 publishDate: 01 Mar 2021
-description: About Vision Root.
+description: a software house.
 image: "/assets/projects/visionRootLogo.png"
 link: "/projects/visionRoot"
 ---
