@@ -1,7 +1,7 @@
 <script>
 </script>
 
-<section>
+<section class="container">
   <p class="title">Curriculum - or the road so far</p>
   <p class="subtitle">
     You can download it in
@@ -9,7 +9,7 @@
     <a href="/assets/RafaelCacilhasCV.pdf" download> Portuguese </a>
   </p>
 
-  <div class="container">
+  <div class="mainContainer">
     <div class="section">
       <p class="sectionTitle">Education</p>
 
@@ -86,6 +86,10 @@
 </section>
 
 <style>
+  .container {
+    min-width: 90%;
+    margin: 2em 0;
+  }
   .title {
     font-size: 2em;
     margin-bottom: 0;
@@ -95,7 +99,7 @@
     margin-top: 0;
     margin-left: 3rem;
   }
-  .container {
+  .mainContainer {
     border: 1px solid var(--primary-color);
     border-radius: 1rem;
     background-color: var(--background-secondary);

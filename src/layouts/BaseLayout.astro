@@ -17,28 +17,29 @@ const { title, description, permalink, currentPage } = Astro.props;
     <BaseHead title={title} description={description} permalink={permalink} />
   </head>
   <body>
-    <div class="layout">
-      <Header currentPage={currentPage} />
+    <Header currentPage={currentPage} />
 
-      <main>
-        <slot />
-      </main>
+    <main>
+      <slot />
+    </main>
 
-      <Footer />
-    </div>
+    <Footer />
+
     <style>
-      .layout {
+      body {
         display: flex;
         flex-direction: column;
         min-height: 100%;
-        min-height: 100vh;
+        min-width: 100vw;
+        position: absolute;
       }
 
       main {
         flex: 1;
         position: relative;
         box-sizing: border-box;
-        width: 100%;
+        min-width: max-content;
+        padding: 0 1rem;
         display: flex;
         flex-direction: column;
         align-items: center;
