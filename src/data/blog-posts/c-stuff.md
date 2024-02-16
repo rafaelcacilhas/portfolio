@@ -35,4 +35,4 @@ I will probably go through the Doom source code at my own pace, but I'll not be 
 
 Fascinating stuff.
 
-I am eager to learn more about graphics programming. Is there a default path to start with it in 2024? I thought about going to Godot, but I think I want to start with something more fundamental. I'll probably stay in Javascript land for a while and learn some three.js
+I am eager to learn more about graphics programming. Is there a default path to start with it in 2024? I thought about going to a framework like Godot, but I think I want to start with something more fundamental. I'm thinking on [Odin](https://odin-lang.org/), but I'll probably stay in Javascript land for a while and learn some three.js
