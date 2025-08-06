@@ -1,12 +1,10 @@
 ---
-import Curriculum from '../components/Curriculum.svelte';
-import Hero from '../components/Hero.svelte';
-import Content from '../components/Content.svelte';
-import BaseLayout from '../layouts/BaseLayout.astro';
+import ScrollableContent from '../components/ScrollableContent.svelte';
+import SidebarLayout from '../layouts/SidebarLayout.astro';
 
 const title = 'Rafael Cacilhas';
 const description = 'A portfolio-slash-blog.';
-const permalink = Astro.site.href;
+const permalink = Astro.site?.href || '';
 
 let allProjects = await Astro.glob('../data/projects/*.md');
 allProjects = allProjects.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf());
@@ -34,14 +32,6 @@ const posts = allPosts.map((item) => {
 )
 ---
 
-<BaseLayout title={title} description={description} permalink={permalink} >
-
-  <Hero />
-
-  <Content title="Latest Projects" content = {projects} seeAllLink="/projects" />
-
-  <Content title="Latest Blog Posts" content = {posts} seeAllLink="/blog" />
-
-  <Curriculum />
-
-</BaseLayout>
+<SidebarLayout title={title} description={description} permalink={permalink} >
+  <ScrollableContent projects={projects} posts={posts} client:load />
+</SidebarLayout>
