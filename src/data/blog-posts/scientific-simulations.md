@@ -5,6 +5,9 @@ description: How I learned programming
 link: "blog/scientific-simulations"
 ---
 
+
+![Ising magnets in 2D](/assets/blog/scientific/ising.png)
+
 ## Physics, Fortran, and the Art of Simulating Reality
 
 You can see my [Academic CV here]( http://lattes.cnpq.br/1396315577832154).
@@ -41,8 +44,5 @@ The latter half of my undergrad and through my Masters I avoided coding as much 
 So I had this class where I was the only student and the professor would give me a weekly problem. I remember spending 8 hours daily from Monday to Friday and barely having time to deliver it in time. I found the problems and my code on my email and uploaded it to my [github](https://github.com/rafaelcacilhas/scientific_simulations).There are 15 projects, ranging from quantum mechanics to fractal chaos. Some have cool graphics, like this Laplace Equation for a square wire (with visual bugs that I did not have time to fix)
 
 ![Laplace equation in two dimensions](/assets/blog/scientific/laplace.png)
-
-An this Ising magnets flipping with higher temperatures
-![Ising magnets in 2D](/assets/blog/scientific/ising.png)
 
 I also learned the basics of Python, although I did not understand the fuss around it. Got used to FORTRAN and had no reason to use anything different. Then I graduated and reencountered the Web Development and Javascript...
