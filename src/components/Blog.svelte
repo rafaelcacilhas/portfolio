@@ -18,11 +18,7 @@
             <div class="post-meta">
             <span class="meta-item">
                 <i class="far fa-calendar"></i>
-                March 15, 2024
-            </span>
-            <span class="meta-item">
-                <i class="far fa-clock"></i>
-                5 min read
+                {post.publishDate}
             </span>
             </div>
             {#if post.link}

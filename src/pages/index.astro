@@ -18,7 +18,11 @@ const projects = allProjects.map((item) => {
     description: item.frontmatter.description,
     image: item.frontmatter.image,
     link: item.frontmatter.link,
-    tags: item.frontmatter.tags || []
+    tags: item.frontmatter.tags || [],
+    role: item.frontmatter.role,
+    duration: item.frontmatter.duration,
+    servingInfo: item.frontmatter.servingInfo,
+    contributions: item.frontmatter.contributions
    }
 }
 )
@@ -27,7 +31,8 @@ const posts = allPosts.map((item) => {
   return {
     title: item.frontmatter.title,
     description: item.frontmatter.description,
-    link:item.frontmatter.link
+    link: item.frontmatter.link,
+    publishDate: item.frontmatter.publishDate
   }
 }
 )

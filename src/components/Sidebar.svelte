@@ -304,7 +304,6 @@
       display: flex;
       flex-direction: row;
       align-items: center;
-      gap: 1rem;
       width: 100%;
     }
 
@@ -315,13 +314,13 @@
     }
 
     .sidebar-nav {
-      margin: 0;
+      margin: 0 3rem 0 0;
       flex: 1;
     }
 
     .sidebar-nav ul {
       display: flex;
-      justify-content: flex-start;
+      justify-content: center;
       align-items: center;
     }
 
