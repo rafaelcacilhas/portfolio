@@ -18,6 +18,8 @@ const permalink = `${Astro.site.href}projects/${slug}`;
 
 <SidebarLayout title={title} description={description} permalink={permalink}>
   <div class="container">
+    <a href="/projects" class="back-button">← Back to Projects</a>
+
     <header>
       <p>{publishDate} ~ {readingTime}</p>
       <h1>{title}</h1>
@@ -34,6 +36,21 @@ const permalink = `${Astro.site.href}projects/${slug}`;
     max-width: 800px;
     margin: 0 auto;
     padding: 2rem;
+  }
+
+  .back-button {
+    display: inline-flex;
+    align-items: center;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease;
+  }
+
+  .back-button:hover {
+    color: var(--primary-color);
   }
 
   header {

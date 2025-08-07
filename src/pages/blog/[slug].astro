@@ -1,6 +1,5 @@
 ---
 import SidebarLayout from '../../layouts/SidebarLayout.astro';
-import Bio from '../../components/Bio.astro';
 import getPostData from '../../utils/getPostData';
 
 export async function getStaticPaths() {
@@ -19,6 +18,7 @@ const permalink = `${Astro.site.href}blog/${slug}`;
 
 <SidebarLayout title={title} description={description} permalink={permalink}>
   <div class="container">
+    <a href="/blog" class="back-button">← Back to Blog</a>
     <header>
       <p>{publishDate} ~ {readingTime}</p>
       <h1>{title}</h1>
@@ -35,6 +35,21 @@ const permalink = `${Astro.site.href}blog/${slug}`;
     max-width: 800px;
     margin: 0 auto;
     padding: 2rem;
+  }
+
+  .back-button {
+    display: inline-flex;
+    align-items: center;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease;
+  }
+
+  .back-button:hover {
+    color: var(--primary-color);
   }
 
   header {
