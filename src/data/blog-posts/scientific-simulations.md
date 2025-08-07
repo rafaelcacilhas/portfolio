@@ -1,34 +1,48 @@
 ---
 title: Scientific Simulations
-publishDate: 30 Oct 2023
+publishDate: 30 Oct 2022
 description: How I learned programming
 link: "blog/scientific-simulations"
 ---
 
-![Illustration of woman using a meditation app](/assets/blog/casual-life-3d-meditation-crystal.webp)
+## Physics, Fortran, and the Art of Simulating Reality
 
-2011 was my first year in college, studying Physics. By the second semester I was having my Programming 101 course and started on a project to simulate some networks.
+You can see my [Academic CV here]( http://lattes.cnpq.br/1396315577832154).
 
-The course was trivial enough, we used C++ and learned the basics of syntax, algorithms and flow control. I had some prior knowledge from trying to mess with ActionScript / Macromedia Flash a few years before, so this was quite a breeze.
+2011 was my first year in college studying Physics. By the second semester I was having my Programming 101 course and started on a project to simulate some networks. Back in those days, I spent an unreasonable amount of time wrestling with numerical simulations—because apparently, physics isn’t hard enough without adding buggy code to the mix. If there’s one thing physics departments love more than blackboards, it’s Fortran, a language that’s been extinct everywhere except academic basements since the 90s.
 
-But parallel to this my teacher posed me the following problem: we have a network of individuals in one dimension, each one having a left and a right neighbor. Some of them might are infected and each unit of time one of two things may happen:
+(I actually really like it? Its a strong typed language and I would constantly consider what sized integer or float I was going to need. The only thing that I was annoyed by was that we could not create an array without defining its size beforehand)
 
-- Infect one of its neighbors (/lambda % of the time)
-- Gets cured ( (100 - /lambda) % of the time))
+### The One-Dimensional Apocalypse (Or: How I Learned to Love Edge Cases)
 
-And we wanna see what happens in a large network (L around 10ˆ6) after a lot of iterations. He said I could do this in any language I wanted and that he in particular used FORTRAN. Knowing that the majority of the department also used FORTRAN I joined on this idea.
+My professor dropped this problem: "Imagine a line of 100 million people, each whispering only to their immediate neighbors. Some of them are sick. Every second, each infected person either:
 
-I actually really like it? Its a strong typed language and I would constantly consider what sized integer or float I was going to need. The only thing that I was annoyed by was that we could not create an array without defining its size. Stuff like
+- Infects a neighbor (with probability λ%), or
+- Spontaneously recovers (because time cures everything).
 
-const myArray[50] = []
+Now simulate a million interactions. Is there a specific λ value where the disease start to spread indefinitely?"
 
-By default you couldnt even do it like this without the compiler screaming at you
+At first glance, it felt like modeling a very boring zombie movie—patients zero shuffling left and right, occasionally coughing on neighbors or suddenly deciding they’re fine. But buried in that simplicity was a devilish question: Could tiny local rules create predictable global pandemics?
 
-const arraySize = 50
-const myArray[arraySize] = []
+Spoiler: Yes. The model’s behavior flipped dramatically based on λ:
 
-But I remember there being a way to make the example above working, although it took me a while to figure it out.
+Small λ: Infections fizzled out like a damp firework
 
-Using FORTRAN I learned a lot of mathematical methods to simulate stuff. Random number generators, Fast Fourier Transforms and stuff like that. I added to my github some stuff I did in a course on my PhD.
+High λ: Everyone got sick, always
 
-I also learned the basics of Python, but I did not understand the fuss around it. Got used to FORTRAN and had no reason to use anything different. Then I graduated and reencountered the Web Development and Javascript...
+λ at a precise spot in the middle: Mathematical chaos. The system became a moody artist—sometimes dying out, sometimes raging forever.
+
+The kicker? This is exactly how forest fires spread, how rumors propagate, and—years later—how my advisor would model early COVID-19 contact tracing. All from a glorified game of telephone.
+
+### There and back again
+
+The latter half of my undergrad and through my Masters I avoided coding as much as possible. I would rather spend a couple of hours solving an ODE by hand than write a single line of code to get an approximated result. But as a fate of destiny would have it, I ended up doing a PhD in Theoretical Physics and my advisor really wanted someone to code.
+
+So I had this class where I was the only student and the professor would give me a weekly problem. I remember spending 8 hours daily from Monday to Friday and barely having time to deliver it in time. I found the problems and my code on my email and uploaded it to my [github](https://github.com/rafaelcacilhas/scientific_simulations).There are 15 projects, ranging from quantum mechanics to fractal chaos. Some have cool graphics, like this Laplace Equation for a square wire (with visual bugs that I did not have time to fix)
+
+![Laplace equation in two dimensions](/assets/blog/scientific/laplace.png)
+
+An this Ising magnets flipping with higher temperatures
+![Ising magnets in 2D](/assets/blog/scientific/ising.png)
+
+I also learned the basics of Python, although I did not understand the fuss around it. Got used to FORTRAN and had no reason to use anything different. Then I graduated and reencountered the Web Development and Javascript...

@@ -5,7 +5,6 @@ description: Something about emulators.
 link: "blog/emulators"
 ---
 
-![Illustration of woman using a computer receiving likes](/assets/blog/casual-life-3d-likes.webp)
 
 My life took a turn at 7, when my ant gave me a CD containing the emulators and ROMs to all the consoles that existed until them. I spent my childhood playing random SNES and Gameboy games, trying them out because the name had a cool word or for any other reason. This passion never went away, since later we would be able to emulate PS2 and Gamecube. The stream of good games to meet never ended.
 

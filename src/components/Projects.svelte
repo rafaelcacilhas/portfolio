@@ -151,10 +151,6 @@
     margin-top: 1rem;
   }
 
-  .featured-extra-info {
-
-  }
-
   .role-duration {
     font-size: 1rem;
     margin: -1rem 0 0 0;
@@ -278,6 +274,13 @@
     margin-top: 1.5rem;
     display: flex;
     gap: 1rem;
+    justify-content: center;
+  }
+
+  .project-links :global(.btn-primary) {
+    text-align: center;
+    display: flex;
+    align-items: center;
     justify-content: center;
   }
 

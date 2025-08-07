@@ -21,31 +21,6 @@ contributions:
 
 ---
 
-      {#if projects[0].role && projects[0].duration}
-          <div class="featured-extra-info">
-            <p class="role-duration"><strong>{projects[0].duration} | {projects[0].role}</strong></p>
-
-            {#if projects[0].servingInfo}
-              <p class="serving-info">Modernized public affairs platform serving:</p>
-              <ul class="serving-list">
-                {#each projects[0].servingInfo as item}
-                  <li>• {item}</li>
-                {/each}
-              </ul>
-            {/if}
-
-            {#if projects[0].contributions}
-              <p class="contributions-title"><strong>Notable Contributions:</strong></p>
-              <ul class="contributions-list">
-                {#each projects[0].contributions as contribution}
-                  <li>- {contribution}</li>
-                {/each}
-              </ul>
-            {/if}
-          </div>
-        {/if}
-
-
 ![Quorum - data driven politics](/assets/projects/quorum_logo.png)
 
 My Time at Quorum

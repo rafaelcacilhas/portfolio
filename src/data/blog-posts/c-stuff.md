@@ -1,6 +1,6 @@
 ---
 title: C stuff
-publishDate: 30 Oct 2023
+publishDate: 17 Aug 2023
 description: My adventures on C land
 link: "blog/c-stuff"
 ---
