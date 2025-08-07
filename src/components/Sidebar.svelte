@@ -47,6 +47,18 @@
 </script>
 
 <aside class="sidebar" class:collapsed={isCollapsed}>
+  <button
+    class="collapse-btn"
+    on:click={() => isCollapsed = !isCollapsed}
+    title={isCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}
+  >
+    {#if isCollapsed}
+      <i class="fas fa-chevron-right"></i>
+    {:else}
+      <i class="fas fa-chevron-left"></i>
+    {/if}
+  </button>
+
   <div class="profile-section">
     <div class="profile-image" class:small={isCollapsed}>
       <img src="/assets/eu.png" alt="Rafael Cacilhas" />

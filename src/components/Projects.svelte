@@ -136,6 +136,15 @@
     gap: 1rem;
   }
 
+  @media (max-width: 768px) {
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
 
+      .project-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
 
 </style>

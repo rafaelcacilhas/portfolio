@@ -36,7 +36,6 @@
     margin-left: auto;
   }
 
-
   @keyframes fadeIn {
     from {
       opacity: 0;
@@ -53,13 +52,5 @@
       padding: 1rem;
     }
 
-    .projects-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .project-header {
-      flex-direction: column;
-      align-items: flex-start;
-    }
   }
 </style>
