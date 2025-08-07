@@ -2,11 +2,12 @@
   --background-body: #fff;
   --background-secondary: #21262d;
   --background-secondary-lighter: #1F2937;
+  --card-background: #ffffff;
   --text-main: #36393b;
   --text-secondary: #6b6f72;
-  --primary-color: #F76982;
+  --primary-color: #e56b6f;
   --primary-light: #ff8fa3;
-  --primary-lighter: #ffb3c1;
+  --primary-lighter: rgba(229, 107, 111, 0.1);
   --secondary-color: #548e9b;
   --border-color: #e1e5e9;
   --shadow-light: rgba(0, 0, 0, 0.05);
@@ -18,9 +19,10 @@
 }
 
 :root.theme-dark {
-  --background-body: #0d1117;
+  --background-body: #121212;
   --background-secondary: #21262d;
   --background-secondary-lighter: #30363d;
+  --card-background: #1e1e1e;
   --text-main: #f0f6fc;
   --text-secondary: #8b949e;
   --secondary-color: #548e9b;
