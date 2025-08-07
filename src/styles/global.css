@@ -279,15 +279,6 @@ input[name='theme-toggle'] {
   }
 }
 
-@media (max-width: 768px) {
-  .container {
-    max-width: none;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-  }
-}
-
 @media (max-width: 480px) {
   body {
     font-size: 14px;

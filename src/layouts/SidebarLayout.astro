@@ -18,13 +18,11 @@ const { title, description, permalink } = Astro.props;
   <body>
     <div class="sidebar-layout">
       <Sidebar client:load />
-      
       <main class="main-content">
         <slot />
         <Footer />
       </main>
     </div>
-
 
     <style>
       body {
@@ -44,8 +42,8 @@ const { title, description, permalink } = Astro.props;
         flex: 1;
         position: relative;
         box-sizing: border-box;
-        margin-left: var(--sidebar-width, 16rem); /* Account for fixed sidebar width */
-        transition: margin-left 0.3s ease; /* Smooth transition when sidebar collapses */
+        margin-left: var(--sidebar-width, 16rem);
+        transition: margin-left 0.3s ease;
       }
 
       @media (max-width: 768px) {
@@ -54,7 +52,7 @@ const { title, description, permalink } = Astro.props;
         }
 
         .main-content {
-          margin-left: 0; /* Remove margin on mobile */
+          margin-left: 0;
         }
       }
     </style>

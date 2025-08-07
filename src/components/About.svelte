@@ -82,9 +82,7 @@
     
     .hero-title span::after {
         content: "";
-        position: absolute;            
-        padding: 0;
-
+        position: absolute;
         bottom: 5px;
         left: 0;
         width: 100%;
