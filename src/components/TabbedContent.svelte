@@ -184,9 +184,7 @@
 
 <style>
   .content-area {
-    margin-left: 320px;
     padding: 2rem;
-    max-width: calc(100vw - 320px);
     width: 100%;
     min-height: 100vh;
   }
@@ -486,8 +484,6 @@
 
   @media (max-width: 768px) {
     .content-area {
-      margin-left: 0;
-      max-width: 100%;
       padding: 1rem;
     }
     

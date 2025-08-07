@@ -1,12 +1,12 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import SidebarLayout from '../layouts/SidebarLayout.astro';
 
 const title = 'About';
 const description = 'About this blog.';
 const permalink = `${Astro.site.href}about`;
 ---
 
-<BaseLayout title={title} description={description} permalink={permalink} currentPage="about">
+<SidebarLayout title={title} description={description} permalink={permalink}>
   <div class="container">
     <h1>About</h1>
     <figure class="about-image">
@@ -53,9 +53,15 @@ const permalink = `${Astro.site.href}about`;
     </div>
 
   </div>
-</BaseLayout>
+</SidebarLayout>
 
 <style>
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
   .about-image {
     float: right;
     margin: -3em -7em 2em 2em;
@@ -67,10 +73,26 @@ const permalink = `${Astro.site.href}about`;
     margin-bottom: 1.5em;
   }
 
+  h1 {
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+  }
+
+  h3 {
+    color: var(--primary-color);
+    margin-top: 2rem;
+  }
+
   @media (max-width: 1020px) {
     .about-image {
       float: none;
       margin: 0 auto 2em;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      padding: 4rem 1rem 1rem;
     }
   }
 </style>

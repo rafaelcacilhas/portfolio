@@ -5,15 +5,12 @@
   let isCollapsed = false;
 
   const toggleSidebar = () => {
-    // Don't allow toggling on mobile
     if (window.innerWidth <= 768) {
       return;
     }
 
-    console.log('Toggling sidebar');
     isCollapsed = !isCollapsed;
 
-    // Update CSS custom property for main content margin (only on desktop)
     document.documentElement.style.setProperty(
       '--sidebar-width',
       isCollapsed ? '6rem' : '16rem'
@@ -23,6 +20,11 @@
   const handleNavClick = (event, targetId) => {
     event.preventDefault();
 
+    if (window.location.pathname !== '/') {
+      window.location.href = `/${targetId}`;
+      return;
+    }
+
     const targetElement = document.querySelector(targetId);
     if (targetElement) {
       targetElement.scrollIntoView({
@@ -30,20 +32,16 @@
         block: 'start'
       });
 
-      // Update active section
       activeSection = targetId.replace('#', '');
     }
   };
 
-  // Initialize CSS custom property on mount
   onMount(() => {
     const updateSidebarWidth = () => {
       if (window.innerWidth <= 768) {
-        // On mobile, force collapsed state and no margin needed
         isCollapsed = true;
         document.documentElement.style.setProperty('--sidebar-width', '0rem');
       } else {
-        // On desktop, use current sidebar state
         document.documentElement.style.setProperty(
           '--sidebar-width',
           isCollapsed ? '6rem' : '16rem'
@@ -133,23 +131,28 @@
   }
 
   .collapse-btn {
+    width: 1.5rem;
+    height: 1.5rem;
+    z-index: 1000;
+    box-shadow: 0 2px 4px var(--shadow-light);
+    pointer-events: auto;
+      
     position: absolute;
     top: 0.3rem;
     right: 0rem;
-    background: var(--primary-color);
-    color: white;
+    
     border: none;
     border-radius: 50%;
-    width: 32px;
-    height: 32px;
+
+    background: var(--primary-color);
+    color: white;
+
     display: flex;
     align-items: center;
     justify-content: center;
+    
     cursor: pointer;
     transition: var(--transition);
-    z-index: 1000;
-    box-shadow: 0 2px 4px var(--shadow-light);
-    pointer-events: auto; /* Ensure it can receive clicks */
   }
 
   .collapse-btn:hover {
@@ -264,7 +267,7 @@
       color: var(--primary-color);
       border-radius: 50%;
       text-decoration: none;
-      transition: var(--transition);
+      transition: all 0.3s ease;
       font-size: 1rem;
   }
 

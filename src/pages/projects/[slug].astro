@@ -1,5 +1,5 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import SidebarLayout from '../../layouts/SidebarLayout.astro';
 import Bio from '../../components/Bio.astro';
 import getPostData from '../../utils/getPostData';
 
@@ -17,27 +17,35 @@ const { slug, readingTime } = getPostData(Astro.props.post);
 const permalink = `${Astro.site.href}projects/${slug}`;
 ---
 
-<BaseLayout title={title} description={description} permalink={permalink} currentPage="projects">
-  <header>
-    <p>{publishDate} ~ {readingTime}</p>
-    <h1>{title}</h1>
-    <hr />
-  </header>
+<SidebarLayout title={title} description={description} permalink={permalink}>
   <div class="container">
+    <header>
+      <p>{publishDate} ~ {readingTime}</p>
+      <h1>{title}</h1>
+      <hr />
+    </header>
     <article class="content">
       <Content />
     </article>
-    <hr />
+    <Bio />
   </div>
-</BaseLayout>
+</SidebarLayout>
 
 <style>
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
   header {
     text-align: center;
+    margin-bottom: 2rem;
   }
 
   header h1 {
     margin-bottom: 0.7em;
+    color: var(--primary-color);
   }
 
   header p {
@@ -50,5 +58,17 @@ const permalink = `${Astro.site.href}projects/${slug}`;
   header hr {
     min-width: 100px;
     width: 30%;
+    border: none;
+    border-top: 2px solid var(--primary-lighter);
+  }
+
+  .content {
+    line-height: 1.7;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      padding: 4rem 1rem 1rem;
+    }
   }
 </style>
