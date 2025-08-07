@@ -1,14 +1,56 @@
 <script>
+  import { onMount, onDestroy } from 'svelte';
   import ThemeToggleButton from './ThemeToggleButton.svelte';
   import About from './About.svelte';
   import Projects from './Projects.svelte';
   import Blog from './Blog.svelte';
+  import { activeSection } from '../stores/navigation.js';
 
   export let projects = [];
   export let posts = [];
+
+  let observer;
+  let mainContentElement;
+
+  onMount(() => {
+    observer = new IntersectionObserver(
+      (entries) => {
+        let maxRatio = 0;
+        let activeEntry = null;
+
+        entries.forEach(entry => {
+          if (entry.intersectionRatio > maxRatio) {
+            maxRatio = entry.intersectionRatio;
+            activeEntry = entry;
+          }
+        });
+
+        if (activeEntry && maxRatio > 0.3) {
+          const sectionId = activeEntry.target.id;
+          activeSection.set(sectionId);
+        }
+      },
+      {
+        root: null,
+        rootMargin: '-20% 0px -20% 0px', // Trigger when section is 20% into viewport
+        threshold: [0, 0.1, 0.3, 0.5, 0.7, 1.0]
+      }
+    );
+
+    const sections = mainContentElement.querySelectorAll('section[id]');
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  });
+
+  onDestroy(() => {
+    if (observer) {
+      observer.disconnect();
+    }
+  });
 </script>
 
-<div class="main-content">
+<div class="main-content" bind:this={mainContentElement}>
   <div class="theme-toggle-container">
     <ThemeToggleButton />
   </div>

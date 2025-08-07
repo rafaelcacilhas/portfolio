@@ -1,8 +1,13 @@
 <script>
   import { onMount } from 'svelte';
+  import { activeSection } from '../stores/navigation.js';
 
-  let activeSection = 'about';
+  let currentActiveSection = 'about';
   let isCollapsed = false;
+
+  activeSection.subscribe(value => {
+    currentActiveSection = value;
+  });
 
   const toggleSidebar = () => {
     if (window.innerWidth <= 768) {
@@ -32,7 +37,7 @@
         block: 'start'
       });
 
-      activeSection = targetId.replace('#', '');
+      activeSection.set(targetId.replace('#', ''));
     }
   };
 
@@ -83,15 +88,15 @@
     
     <nav class="sidebar-nav">
       <ul>
-        <li><a href="#about" class="nav-link" class:active={activeSection === 'about'} class:icon-only={isCollapsed} title="About" on:click={(e) => handleNavClick(e, '#about')}>
+        <li><a href="#about" class="nav-link" class:active={currentActiveSection === 'about'} class:icon-only={isCollapsed} title="About" on:click={(e) => handleNavClick(e, '#about')}>
           <i class="fas fa-user"></i>
           {#if !isCollapsed}About{/if}
         </a></li>
-        <li><a href="#projects" class="nav-link" class:active={activeSection === 'projects'} class:icon-only={isCollapsed} title="Projects" on:click={(e) => handleNavClick(e, '#projects')}>
+        <li><a href="#projects" class="nav-link" class:active={currentActiveSection === 'projects'} class:icon-only={isCollapsed} title="Projects" on:click={(e) => handleNavClick(e, '#projects')}>
           <i class="fas fa-briefcase"></i>
           {#if !isCollapsed}Projects{/if}
         </a></li>
-        <li><a href="#blog" class="nav-link" class:active={activeSection === 'blog'} class:icon-only={isCollapsed} title="Blog" on:click={(e) => handleNavClick(e, '#blog')}>
+        <li><a href="#blog" class="nav-link" class:active={currentActiveSection === 'blog'} class:icon-only={isCollapsed} title="Blog" on:click={(e) => handleNavClick(e, '#blog')}>
           <i class="fas fa-blog"></i>
           {#if !isCollapsed}Blog{/if}
         </a></li>
