@@ -1,41 +1,51 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import SidebarLayout from '../../layouts/SidebarLayout.astro';
 
 const title = 'Rafael Cacilhas - Blog';
 const description = 'Latest blog posts.';
-const permalink = `${Astro.site.href}blog`;
+const permalink = `${Astro.site?.href}blog`;
 
 let allPosts = await Astro.glob('../../data/blog-posts/*.md');
 allPosts = allPosts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf());
 ---
 
-<BaseLayout title={title} description={description} permalink={permalink} currentPage="blog">
-  <div class="container">
-    <h1 class="page-title">Blog</h1>
-    {allPosts.map((post, index) => {
-      const href = `/blog/${post.file.split('/').pop().split('.').shift()}`;
-      return (
-        <div>
-          { index !== 0 && <hr /> }
-          <div class="post-item">
-            <h2>
-              <a href={href}>{post.frontmatter.title}</a>
-            </h2>
-            <p>{post.frontmatter.description}</p>
-            <div class="post-item-footer">
-              <span class="post-item-date">— {post.frontmatter.publishDate}</span>
+<SidebarLayout title={title} description={description} permalink={permalink}>
+  <div class="content-area">
+    <div class="container">
+      <h1 class="page-title">Blog</h1>
+      {allPosts.map((post, index) => {
+        const href = `/blog/${post.file.split('/').pop()?.split('.').shift()}`;
+        return (
+          <div>
+            { index !== 0 && <hr /> }
+            <div class="post-item">
+              <h2>
+                <a href={href}>{post.frontmatter.title}</a>
+              </h2>
+              <p>{post.frontmatter.description}</p>
+              <div class="post-item-footer">
+                <span class="post-item-date">— {post.frontmatter.publishDate}</span>
+              </div>
             </div>
           </div>
-        </div>
-      )
-    })}
+        )
+      })}
+    </div>
   </div>
-</BaseLayout>
+</SidebarLayout>
 
 <style>
+  .content-area {
+    padding: 2rem;
+    width: 100%;
+    min-height: 100vh;
+  }
 
   .page-title {
-    color: var(--secondary-color)
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    font-family: var(--font-family-sans);
   }
   .post-item-footer {
     font-family: var(--font-family-sans);
@@ -51,5 +61,11 @@ allPosts = allPosts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf()
 
   hr {
     margin: 60px auto;
+  }
+
+  @media (max-width: 768px) {
+    .content-area {
+      padding: 1rem;
+    }
   }
 </style>

@@ -1,21 +1,34 @@
 :root {
   --background-body: #fff;
-  --background-secondary: #0f1722;
+  --background-secondary: #21262d;
   --background-secondary-lighter: #1F2937;
+  --card-background: #ffffff;
   --text-main: #36393b;
   --text-secondary: #6b6f72;
-  --primary-color: #F76982;
+  --primary-color: #e56b6f;
+  --primary-light: #ff8fa3;
+  --primary-lighter: rgba(229, 107, 111, 0.1);
   --secondary-color: #548e9b;
+  --border-color: #e1e5e9;
+  --shadow-light: rgba(0, 0, 0, 0.05);
+  --shadow-medium: rgba(0, 0, 0, 0.1);
   --font-family-serif: Merriweather, serif;
   --font-family-sans: 'Fira Sans', sans-serif;
-  --icon-color: #000
+  --icon-color: #000;
+  --transition: all 0.3s ease;
 }
 
 :root.theme-dark {
-  --background-body: #101112;
-  --text-main: #fff;
-  --text-secondary: #ccc;
+  --background-body: #121212;
+  --background-secondary: #21262d;
+  --background-secondary-lighter: #30363d;
+  --card-background: #1e1e1e;
+  --text-main: #f0f6fc;
+  --text-secondary: #8b949e;
   --secondary-color: #548e9b;
+  --border-color: #30363d;
+  --shadow-light: rgba(0, 0, 0, 0.2);
+  --shadow-medium: rgba(0, 0, 0, 0.3);
   --icon-color: #fff
 }
 
@@ -27,6 +40,10 @@ svg {
 *:before,
 *:after {
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -202,7 +219,6 @@ td {
 
 .container {
   margin: 0 auto;
-  max-width: 42em;
   width: 100%;
 }
 

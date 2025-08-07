@@ -1,0 +1,60 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import Sidebar from "../components/Sidebar.svelte";
+
+export interface Props {
+  title: string;
+  description: string;
+  permalink: string;
+}
+const { title, description, permalink } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} permalink={permalink} />
+  </head>
+  <body>
+    <div class="sidebar-layout">
+      <Sidebar client:load />
+      <main class="main-content">
+        <slot />
+        <Footer />
+      </main>
+    </div>
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        background-color: var(--background-body);
+        color: var(--text-main);
+      }
+
+      .sidebar-layout {
+        display: flex;
+        min-height: 100vh;
+      }
+
+      .main-content {
+        flex: 1;
+        position: relative;
+        box-sizing: border-box;
+        margin-left: var(--sidebar-width, 16rem);
+        transition: margin-left 0.3s ease;
+      }
+
+      @media (max-width: 768px) {
+        .sidebar-layout {
+          flex-direction: column;
+        }
+
+        .main-content {
+          margin-left: 0;
+        }
+      }
+    </style>
+  </body>
+</html>

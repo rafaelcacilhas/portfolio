@@ -1,10 +1,4 @@
----
-import Bio from "../components/Bio.astro";
----
-
 <footer>
-  <Bio />
-
   <span class="lastLine">
     &copy; {new Date().getFullYear()} rafaelcacilhas@gmail.com
   </span>
@@ -12,17 +6,23 @@ import Bio from "../components/Bio.astro";
 
 <style>
   footer {
+    width: 100%;
     color: var(--text-secondary);
     font-size: 0.8em;
-    max-width: 1400px;
-    padding: 1em 2em;
+    padding: 1rem 2rem 1rem 8rem;
     text-align: center;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
   }
+
   .lastLine {
     width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    footer {
+      padding: 1rem;
+    }
   }
 </style>
