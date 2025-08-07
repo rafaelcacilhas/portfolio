@@ -17,7 +17,7 @@ const { title, description, permalink } = Astro.props;
   </head>
   <body>
     <div class="sidebar-layout">
-      <Sidebar />
+      <Sidebar client:load />
       
       <main class="main-content">
         <slot />

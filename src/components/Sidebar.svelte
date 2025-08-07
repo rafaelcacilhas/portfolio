@@ -3,53 +3,19 @@
 
   let activeSection = 'about';
   let isCollapsed = false;
-
-  onMount(() => {
-    const navLinks = document.querySelectorAll('.nav-link');
-    navLinks.forEach(link => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const targetId = link.getAttribute('href').substring(1);
-        const targetElement = document.getElementById(targetId);
-        if (targetElement) {
-          targetElement.scrollIntoView({ behavior: 'smooth' });
-          setActiveSection(targetId);
-        }
-      });
-    });
-
-    const sections = document.querySelectorAll('.content-section');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          setActiveSection(entry.target.id);
-        }
-      });
-    }, { threshold: 0.3 });
-
-    sections.forEach(section => observer.observe(section));
-
-    return () => {
-      observer.disconnect();
-    };
-  });
-
-  function setActiveSection(sectionId) {
-    activeSection = sectionId;
-    document.querySelectorAll('.nav-link').forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === `#${sectionId}`) {
-        link.classList.add('active');
-      }
-    });
-  }
+  console.log('Before onMount'); // Check if this line is reached
+  
+  const toggleSidebar = () => {
+    console.log('Toggling sidebar');
+    isCollapsed = !isCollapsed;
+  };
 
 </script>
 
 <aside class="sidebar" class:collapsed={isCollapsed}>
   <button
     class="collapse-btn"
-    on:click={() => isCollapsed = !isCollapsed}
+    on:click={toggleSidebar}
     title={isCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}
   >
     {#if isCollapsed}
@@ -116,8 +82,8 @@
 
   .collapse-btn {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
+    top: 0.3rem;
+    right: 0rem;
     background: var(--primary-color);
     color: white;
     border: none;
@@ -228,6 +194,7 @@
 
   .social-links {
       display: flex;
+      flex-direction: row;
       justify-content: center;
       gap: 1rem;
       margin-top: auto;
@@ -246,7 +213,7 @@
       border-radius: 50%;
       text-decoration: none;
       transition: var(--transition);
-      font-size: 18px;
+      font-size: 1rem;
   }
 
   .social-links a:hover {
@@ -254,6 +221,12 @@
       color: white;
       transform: translateY(-3px);
   }
+
+    .sidebar.collapsed .social-links {
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
 
   @media (max-width: 768px) {
     .sidebar {
@@ -304,13 +277,13 @@
     }
 
     .sidebar.collapsed .social-link {
-      width: 36px;
-      height: 36px;
+      width: 2rem;
+      height: 2rem;
       padding: 0.5rem;
     }
 
     .social-link i {
-      font-size: 16px;
+      font-size: 1rem;
     }
   }
 </style>
