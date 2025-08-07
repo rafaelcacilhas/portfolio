@@ -3,12 +3,61 @@
 
   let activeSection = 'about';
   let isCollapsed = false;
-  console.log('Before onMount'); // Check if this line is reached
-  
+
   const toggleSidebar = () => {
+    // Don't allow toggling on mobile
+    if (window.innerWidth <= 768) {
+      return;
+    }
+
     console.log('Toggling sidebar');
     isCollapsed = !isCollapsed;
+
+    // Update CSS custom property for main content margin (only on desktop)
+    document.documentElement.style.setProperty(
+      '--sidebar-width',
+      isCollapsed ? '6rem' : '16rem'
+    );
   };
+
+  const handleNavClick = (event, targetId) => {
+    event.preventDefault();
+
+    const targetElement = document.querySelector(targetId);
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+
+      // Update active section
+      activeSection = targetId.replace('#', '');
+    }
+  };
+
+  // Initialize CSS custom property on mount
+  onMount(() => {
+    const updateSidebarWidth = () => {
+      if (window.innerWidth <= 768) {
+        // On mobile, force collapsed state and no margin needed
+        isCollapsed = true;
+        document.documentElement.style.setProperty('--sidebar-width', '0rem');
+      } else {
+        // On desktop, use current sidebar state
+        document.documentElement.style.setProperty(
+          '--sidebar-width',
+          isCollapsed ? '6rem' : '16rem'
+        );
+      }
+    };
+
+    updateSidebarWidth();
+    window.addEventListener('resize', updateSidebarWidth);
+
+    return () => {
+      window.removeEventListener('resize', updateSidebarWidth);
+    };
+  });
 
 </script>
 
@@ -36,15 +85,15 @@
     
     <nav class="sidebar-nav">
       <ul>
-        <li><a href="#about" class="nav-link" class:active={activeSection === 'about'} class:icon-only={isCollapsed} title="About">
+        <li><a href="#about" class="nav-link" class:active={activeSection === 'about'} class:icon-only={isCollapsed} title="About" on:click={(e) => handleNavClick(e, '#about')}>
           <i class="fas fa-user"></i>
           {#if !isCollapsed}About{/if}
         </a></li>
-        <li><a href="#projects" class="nav-link" class:active={activeSection === 'projects'} class:icon-only={isCollapsed} title="Projects">
+        <li><a href="#projects" class="nav-link" class:active={activeSection === 'projects'} class:icon-only={isCollapsed} title="Projects" on:click={(e) => handleNavClick(e, '#projects')}>
           <i class="fas fa-briefcase"></i>
           {#if !isCollapsed}Projects{/if}
         </a></li>
-        <li><a href="#blog" class="nav-link" class:active={activeSection === 'blog'} class:icon-only={isCollapsed} title="Blog">
+        <li><a href="#blog" class="nav-link" class:active={activeSection === 'blog'} class:icon-only={isCollapsed} title="Blog" on:click={(e) => handleNavClick(e, '#blog')}>
           <i class="fas fa-blog"></i>
           {#if !isCollapsed}Blog{/if}
         </a></li>
@@ -69,9 +118,12 @@
     padding: 1rem;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    height: 100vh;
     transition: var(--transition);
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
     box-shadow: 5px 0 15px rgba(0, 0, 0, 0.05);
   }
 
@@ -229,31 +281,60 @@
     }
 
   @media (max-width: 768px) {
-    .sidebar {
+    .sidebar,
+    .sidebar.collapsed {
+      position: fixed;
       width: 100%;
-      min-height: auto;
+      height: auto;
+      flex-direction: row;
+      align-items: center;
+      padding: 0.75rem 1rem;
+      border: 0;
+      border-bottom: 1px dashed var(--primary-color);
+    }
+
+    .collapse-btn {
+      display: none; 
+    }
+
+    .profile-section {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 1rem;
+      width: 100%;
+    }
+
+    .profile-image {
+      width: 50px !important;
+      height: 50px !important;
+      margin: 0;
+    }
+
+    .sidebar-nav {
+      margin: 0;
+      flex: 1;
+    }
+
+    .sidebar-nav ul {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    .sidebar-nav li {
+      margin-bottom: 0;
+      width:3rem;
+      height: 3rem;
+    }
+
+    .nav-link {
+      padding: 0.5rem;
+      justify-content: center;
     }
 
     .social-links{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 0.75rem;
-      margin-top: auto;
-      padding-top: 1.5rem;
-      border-top: 1px dashed var(--border-color);
-      transition: var(--transition);
-    }
-
-    /* Default: horizontal layout */
-    .sidebar:not(.collapsed) .social-links {
-      flex-direction: row;
-    }
-
-    /* Collapsed: vertical layout */
-    .sidebar.collapsed .social-links {
-      flex-direction: column;
-      gap: 0.5rem;
+      display: none;
     }
 
     .social-link {
@@ -262,12 +343,12 @@
       justify-content: center;
       color: var(--text-secondary);
       text-decoration: none;
-      padding: 0.75rem;
-      border-radius: 8px;
+      padding: 0.5rem;
+      border-radius: 6px;
       background: var(--primary-lighter);
       transition: all 0.3s ease;
-      width: 3rem;
-      height: 3rem;
+      width: 2.5rem;
+      height: 2.5rem;
     }
 
     .social-link:hover {

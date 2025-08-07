@@ -7,7 +7,7 @@
     <div class="hero-about">
         <h1 class="hero-title">Hi, I'm <span class="name">Rafael Cacilhas</span></h1>
         <p class="hero-subtitle">Full Stack Developer & Tech Enthusiast with 8+ years of experience creating innovative web solutions</p>
-        <div>
+        <div class="btn-container">
             <Button href="/cv.pdf">Download CV</Button>
             <Button href="#projects" variant="outline">View Projects</Button>
         </div>
@@ -63,8 +63,8 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
-        padding: 40px 0;
-        margin-bottom: 50px;
+        padding: 2rem 0;
+        margin-bottom: 3rem;
     }
 
     .hero-title {
@@ -82,7 +82,9 @@
     
     .hero-title span::after {
         content: "";
-        position: absolute;
+        position: absolute;            
+        padding: 0;
+
         bottom: 5px;
         left: 0;
         width: 100%;
@@ -96,6 +98,11 @@
         color: var(--text-secondary);
         max-width: 700px;
         margin-bottom: 40px;
+    }
+
+    .btn-container {
+        display: flex;
+        gap: 1rem;
     }
 
     .about-content {
@@ -152,6 +159,29 @@
         align-items: center;
         justify-content: center;
         font-size: 24px;
+    }
+
+    @media (max-width: 768px) {
+        .about-content {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .about-details {
+            grid-template-columns: 1fr;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+        }
+
+        .btn-container {
+            flex-direction: column;
+        }
     }
 
 </style>

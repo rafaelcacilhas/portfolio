@@ -136,6 +136,16 @@
     transform: translateX(3px);
   }
 
+  @media (max-width: 768px) {
+    .blog-posts {
+      width: 100%;
+    }
+
+    .blog-card {
+      width: 100%;
+      max-width: none;
+    }
+  }
 
 
 </style>

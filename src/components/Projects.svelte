@@ -40,7 +40,7 @@
 
   .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     margin-bottom: 2rem;
   }
@@ -138,7 +138,15 @@
 
   @media (max-width: 768px) {
       .projects-grid {
-        grid-template-columns: 1fr;
+        display: block !important;
+        width: 100% !important;
+      }
+
+      .project-card {
+        width: 100% !important;
+        max-width: none !important;
+        margin-bottom: 1rem;
+        display: block;
       }
 
       .project-header {

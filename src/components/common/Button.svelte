@@ -9,6 +9,19 @@
 
   // Determine if we should render a button or link
   $: isButton = !href || onClick;
+
+  const handleClick = (event) => {
+    if (href && href.startsWith('#')) {
+      event.preventDefault();
+      const targetElement = document.querySelector(href);
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    }
+  };
 </script>
 
 {#if isButton}
@@ -28,6 +41,7 @@
     {rel}
     class="btn"
     class:btn-outline={variant === 'outline'}
+    on:click={handleClick}
   >
     <slot />
   </a>
@@ -35,20 +49,24 @@
 
 <style>
   .btn {
-    display: inline-block;
-    padding: 12px 30px;
-    background-color: var(--primary-color);
-    color: white;
+    min-width: 12rem;
+    margin: 0.5rem 0 0 0;
+    padding: 0.75rem 1rem;
     border-radius: 6px;
+    border: none;
+    background-color: var(--primary-color);
+
+    color: white;    
     text-decoration: none;
     font-weight: 500;
     transition: var(--transition);
-    border: none;
     cursor: pointer;
     font-size: 16px;
-    margin-top: 10px;
     font-family: inherit;
     line-height: 1;
+    
+    display: inline-block;
+
   }
 
   button.btn {
@@ -77,7 +95,6 @@
     background-color: transparent;
     border: 2px solid var(--primary-color);
     color: var(--primary-color);
-    margin-left: 15px;
   }
 
   .btn-outline:hover {

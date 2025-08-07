@@ -49,7 +49,14 @@
 
   @media (max-width: 768px) {
     .main-content {
-      padding: 1rem;
+      padding: 4rem 1rem 0;
+    }
+
+    .theme-toggle-container {
+      position:fixed;
+      top: 1.75rem;
+      right: 0;
+      z-index: 100;
     }
 
   }

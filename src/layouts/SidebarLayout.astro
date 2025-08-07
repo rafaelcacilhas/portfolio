@@ -44,11 +44,17 @@ const { title, description, permalink } = Astro.props;
         flex: 1;
         position: relative;
         box-sizing: border-box;
+        margin-left: var(--sidebar-width, 16rem); /* Account for fixed sidebar width */
+        transition: margin-left 0.3s ease; /* Smooth transition when sidebar collapses */
       }
 
       @media (max-width: 768px) {
         .sidebar-layout {
           flex-direction: column;
+        }
+
+        .main-content {
+          margin-left: 0; /* Remove margin on mobile */
         }
       }
     </style>
