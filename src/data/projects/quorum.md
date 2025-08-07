@@ -1,11 +1,35 @@
 ---
 title: Quorum
-publishDate: 28 Feb 2023
-description: Best-in-class Public Affairs Software
+publishDate: 28 Feb 2025
+description: Policy engagement platform for governments and advocacy groups
 image: "https://avatars.githubusercontent.com/u/6657795?s=200&v=4"
 link: "/projects/quorum"
+tags: ["React", "Django", "Python"]
+
 ---
 
 ![Quorum - data driven politics](/assets/projects/quorum_logo.png)
 
-Quorum is a public affairs company. I joined the team on the ending of Feb. 2023 and I work mainly on the design system, although we are also responsible for several of the components that empower our users and have to constantly improve and debug them.
+My Time at Quorum
+
+For two and a half years, I worked as a full-stack engineer at Quorum, primarily focused on frontend development with React. The platform—a powerful but complex public affairs tool used by governments and advocacy groups—underwent a complete transformation during my tenure.
+
+I was part of a fluid, multicultural team that typically included around eight engineers, one exceptional product manager, and a designer. Under the guidance of two great managers, Akshata and Willy, we created a new frontend architecture that allowed new pages to be added with ease. The old system had grown organically over years, but our new purple-themed UI, while a color adjustment for me, ultimately created a more intuitive experience for the users.
+
+![Old design](/assets/projects/quorum_old.png)![New design](/assets/projects/quorum_new.png)
+
+Through the "Persona Project," we restructured the interface without removing functionality—just reorganizing it based on how different users actually worked. Seeing policy professionals navigate the platform more easily after our changes was incredibly rewarding. The codebase was massive, and we maintained rigorous testing with unit tests, integration tests, and Cypress end-to-end scenarios, which had to pass to allow the deployment CI/CD pipeline.
+
+My final six months brought an exciting shift when I transferred permanently to a backend team working on the Grassroots product. Daily Python work with Django gave me deeper insight into our abstracted DjangIO layer that connected frontend and backend—knowledge that immediately improved my contributions.
+
+Beyond coding, Quorum taught me how large-scale applications work and evolve in practice. The collaboration across disciplines was invaluable: working with Designers on interface changes, partnering with QA to bulletproof features, and seeing how Product balanced user needs with technical constraints. In a company with over 100 engineers across 4 continents clear communication and thoughtful architecture decisions became second nature.
+
+What I'll Remember Most:
+
+- Late-night debugging sessions with teammates who became lifelong friends
+
+- Beeing on call and seeing bugs appear after a deployment, even after all the tests. Rollback *NOW* and go fix it!
+
+- The satisfaction of seeing our redesigned interface in daily use by policymakers
+
+- Learning that good design sometimes means sacrificing personal preferences (I miss you, navy blue) for usability

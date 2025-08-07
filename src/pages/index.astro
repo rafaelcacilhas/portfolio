@@ -16,8 +16,9 @@ const projects = allProjects.map((item) => {
   return {
     title: item.frontmatter.title,
     description: item.frontmatter.description,
-    image:item.frontmatter.image,
-    link:item.frontmatter.link
+    image: item.frontmatter.image,
+    link: item.frontmatter.link,
+    tags: item.frontmatter.tags || []
    }
 }
 )

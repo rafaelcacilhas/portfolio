@@ -78,7 +78,7 @@
     </div>
     {#if !isCollapsed}
       <p class="name">Rafael Cacilhas</p>
-      <p class="tagline">All things programming</p>
+      <p class="tagline">Physicist turned Full-Stack Developer</p>
     {/if}
     
     <nav class="sidebar-nav">

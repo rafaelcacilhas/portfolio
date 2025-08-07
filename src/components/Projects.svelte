@@ -23,9 +23,13 @@
             <h3>{project.title}</h3>
           </div>
           <p class="project-description">{project.description}</p>
-          <div class="project-tags">
-            <span >React</span>
-          </div>
+          {#if project.tags && project.tags.length > 0}
+            <div class="project-tags">
+              {#each project.tags as tag}
+                <span class="tag">{tag}</span>
+              {/each}
+            </div>
+          {/if}
           {#if project.link}
             <div class="project-links">
               <Button href={project.link} class="btn-primary">View Details →</Button>
@@ -121,7 +125,7 @@
     margin: 1rem 0;
   }
 
-  .project-tags span {
+  .tag {
         background-color: var(--primary-lighter);
         color: var(--primary-color);
         padding: 0.5rem 0.75rem;

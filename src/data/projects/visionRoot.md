@@ -1,9 +1,10 @@
 ---
 title: Vision Root
 publishDate: 01 Mar 2021
-description: a software house.
+description: Custom software development for complex business needs
 image: "/assets/projects/visionRootLogo.png"
 link: "/projects/visionRoot"
+tags: ["Next", "React", "Laravel"]
 ---
 
 ![Illustration of woman using a computer receiving likes](/assets/projects/visionroot.png)
@@ -16,8 +17,9 @@ Down bellow I'll discuss in more details two projects that allowed me to learn a
 
 ## <a name="top"></a> Table of Contents
 
-- [Appice](#Appice)
-- [TremVip](#TremVip)
+- [ Table of Contents](#-table-of-contents)
+- [Appice](#appice)
+- [TremVip](#tremvip)
 
 ---
 

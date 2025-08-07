@@ -1,6 +1,5 @@
 ---
 import SidebarLayout from '../../layouts/SidebarLayout.astro';
-import Bio from '../../components/Bio.astro';
 import getPostData from '../../utils/getPostData';
 
 export async function getStaticPaths() {
@@ -12,7 +11,7 @@ export async function getStaticPaths() {
 }
 
 const { Content, frontmatter } = Astro.props.post;
-const { title, description, publishDate, image } = frontmatter;
+const { title, description, publishDate, image, tags } = frontmatter;
 const { slug, readingTime } = getPostData(Astro.props.post);
 const permalink = `${Astro.site.href}projects/${slug}`;
 ---
@@ -27,7 +26,6 @@ const permalink = `${Astro.site.href}projects/${slug}`;
     <article class="content">
       <Content />
     </article>
-    <Bio />
   </div>
 </SidebarLayout>
 
