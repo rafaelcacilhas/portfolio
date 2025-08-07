@@ -8,7 +8,7 @@
         <h1 class="hero-title">Hi, I'm <span class="name">Rafael Cacilhas</span></h1>
         <p class="hero-subtitle">Physicist turned Full-Stack Developer crafting digital experiences since ActionScript days</p>
         <div class="btn-container">
-            <Button href="/cv.pdf">Download CV</Button>
+            <Button href="/assets/RafaelCacilhasCV-eng.pdf" target="blank">Download CV</Button>
             <Button href="#projects" variant="outline">View Projects</Button>
         </div>
     </div>
@@ -160,6 +160,10 @@
     }
 
     @media (max-width: 768px) {
+        .hero-about {
+            padding: 4rem 0;
+        }
+        
         .about-content {
             grid-template-columns: 1fr;
             gap: 20px;
