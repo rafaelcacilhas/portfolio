@@ -6,7 +6,7 @@
 <section class="section" id="about">
     <div class="hero-about">
         <h1 class="hero-title">Hi, I'm <span class="name">Rafael Cacilhas</span></h1>
-        <p class="hero-subtitle">Full Stack Developer & Tech Enthusiast with 8+ years of experience creating innovative web solutions</p>
+        <p class="hero-subtitle">Physicist turned Full-Stack Developer crafting digital experiences since ActionScript days</p>
         <div class="btn-container">
             <Button href="/cv.pdf">Download CV</Button>
             <Button href="#projects" variant="outline">View Projects</Button>
@@ -22,30 +22,30 @@
     
     <div class="about-content">
         <div class="about-text">
-            <p>I'm a passionate developer with a strong background in creating robust web applications. My journey in tech started when I was 16, and I've been coding professionally for over 8 years.</p>
+            <p>My coding journey began as a teenager around 2005 messing with Flash games and animations with ActionScript, sparking a lifelong passion for digital creation. This early foundation in interactive media evolved into professional expertise in modern web development.</p>
             
-            <p>I specialize in JavaScript ecosystems, with expertise in React, Node.js, and modern frontend frameworks. My approach combines technical excellence with creative problem-solving to deliver exceptional user experiences.</p>
+            <p>During my Physics degree at University of Viçosa (UFV), I developed scientific simulations that taught me to translate complex real-world systems into elegant code. This unique background gives me a problem-solving approach that combines analytical rigor with creative technical solutions.</p>
             
-            <p>When I'm not coding, you'll find me contributing to open-source projects, writing technical articles, or exploring new technologies. I believe in continuous learning and sharing knowledge with the developer community.</p>
+            <p>Today, I specialize in building full-stack applications with modern JavaScript ecosystems, focusing on creating intuitive user experiences. When not coding, I contribute to open-source projects, write about tech concepts, and explore how game design principles can enhance web interactions.</p>
         </div>
         
         <div class="about-details">
             <DetailCard
                 icon="fas fa-laptop-code"
                 title="Experience"
-                description="8+ years developing web applications for startups and enterprises"
+                description="10+ years development experience. 3+ years as a full-stack developer"
             />
 
             <DetailCard
                 icon="fas fa-graduation-cap"
                 title="Education"
-                description="BSc in Computer Science from University of Lisbon"
+                description="PhD in Physics from Federal University of Viçosa (UFV)."
             />
 
             <DetailCard
                 icon="fas fa-map-marker-alt"
                 title="Location"
-                description="Based in sunny Lisbon, Portugal"
+                description="Based in Minas Gerais, Brazil. Timezone: UTC-3"
             />
 
             <DetailCard
