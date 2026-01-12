@@ -10,19 +10,21 @@
     "astro": "astro"
   },
   "devDependencies": {
-    "@astrojs/mdx": "^0.8.3",
-    "@astrojs/svelte": "^4.0.3",
-    "astro": "^1.0.3",
+    "@astrojs/mdx": "^4.0",
+    "@astrojs/svelte": "^7.0.3",
+    "astro": "^5.0.3",
     "prettier": "^3.2.5",
     "prettier-plugin-astro": "^0.13.0",
     "rehype-external-links": "^2.0.0"
   },
   "dependencies": {
     "@threlte/core": "^8.3.1",
+    "@threlte/extras": "^9.7.1",
     "@types/three": "^0.182.0",
     "prettier-plugin-svelte": "^3.4.1",
     "reading-time": "^1.5.0",
-    "svelte": "^4.2.0",
-    "three": "^0.182.0"
+    "svelte": "^5.2.0",
+    "three": "^0.182.0",
+    "typescript": "^5.3.3"
   }
 }

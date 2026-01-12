@@ -1,6 +1,10 @@
 import { defineConfig } from 'astro/config'
 import svelte from '@astrojs/svelte'
 import mdx from '@astrojs/mdx'
+import smartypants from 'remark-smartypants'
+import remarkGfm from 'remark-gfm'
+import rehypeExternalLinks from 'rehype-external-links'
+
 
 // https://astro.build/config
 export default defineConfig({
@@ -10,10 +14,10 @@ export default defineConfig({
     shikiConfig: {
       theme: 'nord',
     },
-    remarkPlugins: ['remark-gfm', 'remark-smartypants'],
+    remarkPlugins: [remarkGfm, smartypants],
     rehypePlugins: [
       [
-        'rehype-external-links',
+        rehypeExternalLinks,
         {
           target: '_blank',
         },
