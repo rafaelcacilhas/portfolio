@@ -6,12 +6,12 @@ link: "blog/c-stuff"
 ---
 
 <p align="center">
-  <img src="/assets/blog/c-stuff/hovertank.jpeg" width=500/>
+  <img src="/assets/blog/c-stuff/hovertank.jpeg" width=500>
 </p>
 
 My first programming course on college used C++. Seems like a decent standard language but I always had trouble reading actual C++ projects. There are so many libraries and the names used always confused me. In the next few years I dabbled in Python and Javascript, but I always wanted to learn C and understand what is the common ancestor from all these languages.
 
-During my time studying Physics we mostly used FORTRAN, which is a low level language but from a different family than C. I actually really enjoyed my time using it, as I discussed on [scientific simulations]() post.
+During my time studying Physics we mostly used FORTRAN, which is a low level language but from a different family than C. I actually really enjoyed my time using it, as I discussed on [scientific simulations](/blog/scientific-simulations) post.
 
 One day I stumbled on someone mentioning [The C Programming Language](https://www.libgen.is/book/index.php?md5=C684BE9C0147B68596683222502675FB) book. I opened out of curiosity and was amazed by how simple everything was; I read the whole book in two or three sittings.
 
