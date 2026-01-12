@@ -4,14 +4,14 @@ import BlenderPage from "../../data/blog-posts/blender/blender.svelte"
 import getPostData, { Post} from '../../utils/getPostData';
 
 
-let blenderPDF = await Astro.glob('../../data/blog-posts/blender/blender.md');
+let blenderPDF = await Astro.glob('../../data/blog-posts/blender.md');
 const {Content, frontmatter} = blenderPDF[0]
 const {title, description, publishDate, link} = frontmatter;
 const { slug, readingTime } = getPostData(blenderPDF[0] as unknown as Post);
 
 ---
 
-<SidebarLayout title={title} description={description} permalink={link}>
+<SidebarLayout title={title} description={description} permalink={link} >
   <div class="container">
     <a href="/blog" class="back-button">← Back to Blog</a>
     <header>
@@ -21,7 +21,7 @@ const { slug, readingTime } = getPostData(blenderPDF[0] as unknown as Post);
     </header>
     <article class="content">
       <Content />
-      <BlenderPage />
+      <BlenderPage client:load/>
     </article>
   </div>
 </SidebarLayout>
