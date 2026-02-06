@@ -2,6 +2,8 @@
     import Button from './common/Button.svelte';
     import ContentSection from './common/ContentSection.svelte';
     export let projects = [];
+
+    const amountOfProjects = 2
 </script>
 
 <ContentSection
@@ -22,7 +24,9 @@
             </div>
           {/if}
           <h3>{projects[0].title}</h3>
-          <p class="role-duration"><strong>{projects[0].duration} | {projects[0].role}</strong></p>
+            {#if projects[0].duration && projects[0].duration}
+              <p class="role-duration"><strong>{projects[0].duration} | {projects[0].role}</strong></p>
+            {/if}
         </div>
         <p class="project-description">{projects[0].description}</p>
 
@@ -66,7 +70,8 @@
 
     <!-- Non-featured projects -->
     <div class="non-featured-container">
-      {#each projects.slice(1) as project}
+      {#each projects.slice(1) as project, index}
+      {#if index < amountOfProjects}
         <div class="project-card">
           <div class="project-header">
             {#if project.image}
@@ -90,6 +95,8 @@
             </div>
           {/if}
         </div>
+      {/if}
+
       {/each}
     </div>
   </div>
@@ -128,7 +135,6 @@
     padding: 2rem;
     background: linear-gradient(135deg, var(--card-background) 0%, var(--primary-lighter) 100%);
     border: 2px solid var(--primary-color);
-    min-height: 400px;
     display: flex;
     flex-direction: column;
   }
@@ -140,7 +146,6 @@
 
   .project-card.featured .project-description {
     font-size: 1.1rem;
-    flex-grow: 1;
   }
 
   .project-card.featured .project-tags {
@@ -187,8 +192,7 @@
   .project-card.featured .project-image img {
     width: 100%;
     height: 100%;
-    min-width:12.5rem;
-    object-fit: cover;
+    max-width: 150px  ;
   }
 
   .non-featured-container {
@@ -296,9 +300,9 @@
         grid-column: unset;
         grid-row: unset;
         width: 100%;
+        max-height:5  rem;
         padding: 1.5rem;
         margin-bottom: 1rem;
-        min-height: auto;
         text-align: center;
       }
 

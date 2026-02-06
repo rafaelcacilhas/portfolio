@@ -2,7 +2,7 @@
 title: Vision Root
 publishDate: 01 Mar 2021
 description: Custom software development for complex business needs
-image: "/assets/projects/visionRootLogo.png"
+image: "/assets/projects/images/visionRootLogo.png"
 link: "/projects/visionRoot"
 tags: ["Next", "React", "Laravel"]
 ---

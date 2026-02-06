@@ -2,7 +2,7 @@
 title: Contaja
 publishDate: 30 Nov 2022
 description: Automated accounting solutions in a modern platform
-image: "/assets/projects/contajaLogo.svg"
+image: "/assets/projects/images/contajaLogo.svg"
 link: "/projects/contaja"
 tags: ["Vue", "Angular", "Laravel"]
 ---

@@ -138,7 +138,8 @@
   .collapse-btn {
     width: 1.5rem;
     height: 1.5rem;
-    z-index: 1000;
+    padding:0;      
+    z-index: 10;
     box-shadow: 0 2px 4px var(--shadow-light);
     pointer-events: auto;
       
