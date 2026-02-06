@@ -21,7 +21,7 @@ const { slug, readingTime } = getPostData(blenderPDF[0] as unknown as Post);
     </header>
     <article class="content">
       <Content />
-      <BlenderPage client:load/>
+      <BlenderPage client:load children/>
     </article>
   </div>
 </SidebarLayout>

@@ -1,0 +1,17 @@
+{
+  "MD013": false,
+  "MD033": false,
+  "MD034": false,
+  "MD041": false,
+  
+  "MD001": true,
+  "MD007": { "indent": 2 },
+  "MD009": { "br_spaces": 2 },
+  "MD024": false, 
+  
+  "MD004": { "style": "dash" },
+  "MD012": true, 
+  "MD022": true, 
+  "MD026": true,
+  "MD031": true 
+}

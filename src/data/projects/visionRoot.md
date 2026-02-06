@@ -7,7 +7,7 @@ link: "/projects/visionRoot"
 tags: ["Next", "React", "Laravel"]
 ---
 
-![Illustration of woman using a computer receiving likes](/assets/projects/visionroot.png)
+![Illustration of woman using a computer receiving likes](/assets/projects/images/visionroot.png)
 
 Vision Root was a software house start-up company in Viçosa. I was the fifth engineer when I was hired and we soon grew to six. We had several projects and I worked in a few of them, where I was able to acquire experience in several technologies, which I will list in more details down bellow.
 
@@ -29,8 +29,8 @@ Appice is an app that is focused on helping women keep their Apice cycles. The f
 
 The backend was written in node, although I do not recall if we used any frameworks. It was common for us to use Nest.js, but I do not remember if it was used in this particular project. This backend was also accessed by a website, which had all the relevant dashboards for keeping track of the app.
 
-<img src="/assets/projects/appice-intro.jpg" width="200" alt="Appice auth screen" />
-<img src="/assets/projects/appice-main.jpg" width="200" alt="Appice main screen" />
+<img src="/assets/projects/images/appice-intro.jpg" width="200" alt="Appice auth screen" />
+<img src="/assets/projects/images/appice-main.jpg" width="200" alt="Appice main screen" />
 
 I built most of the auth system using the company <a href="https://www.keycloak.org/" target="blank"> Keycloak </a> settings. This app had several categories of different users:
 
@@ -44,7 +44,7 @@ The client had all the design figured out and it was quite a pleasure to reconst
 
 ## <a name="TremVip"></a>TremVip
 
-![TremVip](/assets/projects/tremvip.png)
+![TremVip](/assets/projects/images/tremvip.png)
 
 TremVip is an online ticket store for events in Viçosa. We created it using Next, in particular its e-shop template. In this project I learnt the basics of Next and SSR and also its integration to the backend using GraphQL.
 The products of the store were digital tickets, each one being encoded into a QR-Code that could be read by a separated app.

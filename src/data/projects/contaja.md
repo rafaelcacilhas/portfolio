@@ -7,7 +7,7 @@ link: "/projects/contaja"
 tags: ["Vue", "Angular", "Laravel"]
 ---
 
-![Contaja logo](/assets/projects/contaja.svg)
+![Contaja logo](/assets/projects/images/contaja.svg)
 
 Contaja is a small Accountings company from Viçosa - my current town. I worked there as a front-end engineer and made several pages for their new dashboards.
 

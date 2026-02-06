@@ -1,0 +1,3 @@
+[submodule "src/components/metrodrone"]
+	path = src/components/metrodrone
+	url = https://github.com/rafaelcacilhas/metrodrone-web.git

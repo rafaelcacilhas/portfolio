@@ -8,8 +8,13 @@ import rehypeExternalLinks from 'rehype-external-links'
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://www.rafaelcacilhas.site',
-  integrations: [mdx(), svelte()],
+  site: 'https://www.rafaelcacilhas.xyz',
+  integrations: [mdx(), svelte({
+    include: [ 
+      './src/**/*.svelte',
+      './src/components/metronome/src/**/*.svelte'  // Include submodule!
+    ]
+  })],
   markdown: {
     shikiConfig: {
       theme: 'nord',
@@ -24,4 +29,38 @@ export default defineConfig({
       ],
     ],
   },
-})
+
+  vite: {
+    resolve: {
+      alias: {
+        // Map $lib to the metrodrone's lib folder
+        '$lib': '/src/components/metrodrone/src/lib'
+      }
+    },
+    optimizeDeps: {
+      include: [
+        'bits-ui',
+        'tailwind-merge',
+        'clsx',
+        'svelte',
+        'svelte/store',
+        '@lucide/svelte',
+        'tailwind-variants',
+        'svelte-sonner',
+        'mode-watcher',
+        '@internationalized/date'
+      ]
+    },
+    ssr: {
+      noExternal: [
+        'bits-ui',
+        'tailwind-merge',
+        'clsx',
+        '@lucide/svelte',
+        'tailwind-variants',
+        'svelte-sonner',
+        'mode-watcher',
+        '@internationalized/date'
+      ]
+    }
+  }})

@@ -2,6 +2,8 @@
 import SidebarLayout from '../../layouts/SidebarLayout.astro';
 import getPostData from '../../utils/getPostData';
 
+import MetrodroneDemo from '../../components/Metrodrone.svelte';  
+
 export async function getStaticPaths() {
   const posts = await Astro.glob('../../data/projects/*.md');
   return posts.map(p => ({
@@ -14,6 +16,7 @@ const { Content, frontmatter } = Astro.props.post;
 const { title, description, publishDate, image, tags } = frontmatter;
 const { slug, readingTime } = getPostData(Astro.props.post);
 const permalink = `${Astro.site.href}projects/${slug}`;
+
 ---
 
 <SidebarLayout title={title} description={description} permalink={permalink}>
@@ -25,9 +28,17 @@ const permalink = `${Astro.site.href}projects/${slug}`;
       <h1>{title}</h1>
       <hr />
     </header>
+    
     <article class="content">
+      <!-- Actual content -->
       <Content />
+
+      <!-- Extras for specific projects -->
+      {slug === 'metrodrone' && 
+        <MetrodroneDemo client:only="svelte" />
+      }
     </article>
+
   </div>
 </SidebarLayout>
 
@@ -80,6 +91,7 @@ const permalink = `${Astro.site.href}projects/${slug}`;
   .content {
     line-height: 1.7;
   }
+  
 
   @media (max-width: 768px) {
     .container {
