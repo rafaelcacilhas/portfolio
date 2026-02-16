@@ -3,7 +3,6 @@ import SidebarLayout from '../../layouts/SidebarLayout.astro';
 import getPostData from '../../utils/getPostData';
 
 import MetrodroneDemo from '../../components/Metrodrone.svelte';  
-export const ssr = false;
 
 export async function getStaticPaths() {
   const posts = await Astro.glob('../../data/projects/*.md');
@@ -35,7 +34,9 @@ const permalink = `${Astro.site.href}projects/${slug}`;
       <Content />
 
       <!-- Extras for specific projects -->
-
+      {slug === 'metrodrone' && 
+        <MetrodroneDemo client:only="svelte" />
+      }
     </article>
 
   </div>

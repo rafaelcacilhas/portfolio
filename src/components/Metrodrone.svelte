@@ -64,7 +64,6 @@
   class:fullscreen={isFullscreen}
   bind:this={containerRef}
 >
-  
   <div class="demo-content">
       <MetrodroneApp />
   </div>
@@ -139,7 +138,8 @@ Based on this I decided to build a small metronome and drone player to help me o
   .demo-content {
     background: #000;
     min-height: 500px;
-    max-width: 800px;
+    max-width: 1000px;
+    padding-left: 4rem;
     width:100%;
     border: 1px solid white;
     display: flex;
