@@ -11,7 +11,7 @@
     "update:metrodrone": "cd src/components/metrodrone && git pull origin main",
     "update:all": "git submodule update --remote --merge",
     "update": "npm run update:all && npm run update:metrodrone && git add ."
-    },
+  },
   "devDependencies": {
     "@astrojs/mdx": "^4.0",
     "@astrojs/svelte": "^7.0.3",
@@ -25,6 +25,7 @@
     "tailwindcss": "^4.1.18"
   },
   "dependencies": {
+    "@astrojs/vercel": "^9.0.4",
     "@internationalized/date": "^3.11.0",
     "@lucide/svelte": "^0.563.1",
     "@threlte/core": "^8.3.1",

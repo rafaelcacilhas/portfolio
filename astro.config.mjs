@@ -4,7 +4,7 @@ import mdx from '@astrojs/mdx'
 import smartypants from 'remark-smartypants'
 import remarkGfm from 'remark-gfm'
 import rehypeExternalLinks from 'rehype-external-links'
-
+import vercel from '@astrojs/vercel/static';
 
 // https://astro.build/config
 export default defineConfig({
@@ -15,6 +15,9 @@ export default defineConfig({
       './src/components/metronome/src/**/*.svelte'  // Include submodule!
     ]
   })],
+  output: 'static',
+  adapter: vercel({
+  }),
   markdown: {
     shikiConfig: {
       theme: 'nord',
@@ -50,16 +53,8 @@ export default defineConfig({
         'mode-watcher',
         '@internationalized/date'
       ],
-      exclude:[        
-        '@threlte/core', 
-        '@threlte/extras'
-      ]
     },
     ssr: {
-      external:[        
-        '@threlte/core', 
-        '@threlte/extras'
-      ],
       noExternal: [
         'bits-ui',
         'tailwind-merge',
