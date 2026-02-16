@@ -1,7 +1,7 @@
 <!-- portfolio/src/components/MetrodroneDemo.svelte -->
 <script lang="ts">
   import { MetrodroneApp } from '../components/metrodrone/src/lib/index.js';
-  import { onMount, onDestroy } from 'svelte';
+  import { onDestroy } from 'svelte';
   
   let isFullscreen = $state(false);
   let containerRef: HTMLDivElement;
@@ -64,7 +64,7 @@
   class:fullscreen={isFullscreen}
   bind:this={containerRef}
 >
-
+  
   <div class="demo-content">
       <MetrodroneApp />
   </div>
@@ -76,7 +76,7 @@
   {/if}
 </div>
 
-<button 
+<!-- <button 
     class="fullscreen-btn" 
     onclick={toggleFullscreen}
     aria-label={isFullscreen ? 'Exit fullscreen' : 'Enter fullscreen'}
@@ -86,11 +86,24 @@
     {:else}
     <span class="icon">[]</span> 
     {/if}
-</button>
+</button> -->
+
+<p>
+In the past few months I started to read two books on music that totally changed the way I think on the subject, Harmonic Experience by W. A. Mathieu and The Advancing Guitarist by Mick Goodrick.
+They both propose exercises on singing ( with your voice or your instrument) along a drone (i.e., a single constant musical note) to internalize the relationship between each interval and the root.
+Based on this I decided to build a small metronome and drone player to help me on my studies and learn about the web audio api in the process. Its quite simple for now and we only have one sound for the drone; i'll try to synthesize more instruments and put some parameters later.
+</p>
+
+<p>
+  One day in the middle of coding I watched a video on <a href="https://www.youtube.com/watch?v=VXWvfrmpapI" target="_blank">audio visualizers</a> and was inspired in create a little display for the drone wave.
+  The fact that the Web Audio api contains the Fourier transform of the wave is very interest and fun to play with.
+</p>
+
 <style>
   .metrodrone-container {
     margin: 0 auto;
     padding: 1.5rem;
+    color:white;
   }
   
   .metrodrone-container.fullscreen {
@@ -103,7 +116,7 @@
     flex-direction: column;
   }
 
-  .fullscreen-btn {
+  /* .fullscreen-btn {
     padding: 0.5rem 1rem;
     background: rgba(229, 107, 111, 0.1);
     border: 1px solid rgba(229, 107, 111, 0.3);
@@ -111,24 +124,22 @@
     color: #e56b6f;
     font-weight: 600;
     cursor: pointer;
-    position:absolute;
-    left:80%;
-    bottom:-35%;
-  }
+
+  } */
   
-  .fullscreen-btn:hover {
+  /* .fullscreen-btn:hover {
     background: rgba(229, 107, 111, 0.2);
     transform: translateY(-2px);
   }
   
   .fullscreen-btn:active {
     transform: translateY(0);
-  }
+  } */
 
   .demo-content {
     background: #000;
     min-height: 500px;
-    max-width: 900px;
+    max-width: 800px;
     width:100%;
     border: 1px solid white;
     display: flex;

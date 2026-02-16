@@ -21,8 +21,9 @@ const projects = allProjects.map((item) => {
     tags: item.frontmatter.tags || [],
     role: item.frontmatter.role,
     duration: item.frontmatter.duration,
-    servingInfo: item.frontmatter.servingInfo,
-    contributions: item.frontmatter.contributions
+    extra: item.frontmatter.extra,
+    details: item.frontmatter.details
+
    }
 }
 )

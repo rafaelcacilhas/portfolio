@@ -6,18 +6,19 @@ image: "/assets/projects/images/metrodroneLogo.png"
 link: "/projects/metrodrone"
 tags: ["Svelte","Typescript","Audio"]
 
-role: Full-stack Engineer
-duration: 2.5 years
-servingInfo:
-- Legislative offices  
-- Advocacy groups  
-- Corporate GR teams  
-- NGOs
+role: Solo dev
+duration: ~1 month
 
-contributions:
-- Frontend architecture redesign
-- Backend systems development  
-- Cross-functional team 
+details:
+- Details
+- Svelte frontend
+- Typescript engine
+
+extra:
+- More Info
+- Web Audio API
+- Audio engine schedule metronome beats
+- Svelte store keeps in sync with engine 
 ---
 
 <div style="display:flex; justify-content:center">
@@ -28,5 +29,11 @@ contributions:
   />
 </div>
 
-A fully interactive metronome and drone generator built with modern web technologies. 
+A fully interactive metronome and drone generator built with modern web technologies.
 Features real-time audio synthesis, customizable beat patterns, and a responsive interface.
+You can change the beat sound by clicking the beat!
+
+- Square = bass drum
+- Circle = snare
+- Triangle = closed hi-hat
+- X = muted

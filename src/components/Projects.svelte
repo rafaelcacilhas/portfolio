@@ -4,6 +4,8 @@
     export let projects = [];
 
     const amountOfProjects = 2
+
+    console.log('project 0', projects[0])
 </script>
 
 <ContentSection
@@ -24,8 +26,8 @@
             </div>
           {/if}
           <h3>{projects[0].title}</h3>
-            {#if projects[0].duration && projects[0].duration}
-              <p class="role-duration"><strong>{projects[0].duration} | {projects[0].role}</strong></p>
+            {#if projects[0].duration  || projects[0].role}
+              <p class="role-duration"><strong>{projects[0].role && projects[0].role} {projects[0].duration && ' | '+ projects[0].duration}</strong></p>
             {/if}
         </div>
         <p class="project-description">{projects[0].description}</p>
@@ -33,20 +35,24 @@
         {#if projects[0].role && projects[0].duration}
           <div class="featured-extra-info">
 
-            {#if projects[0].servingInfo}
-              <p class="serving-info">Modernized public affairs platform serving:</p>
+            {#if projects[0].details}
+              <p class="serving-info">{projects[0].details[0]}</p>
               <ul class="serving-list">
-                {#each projects[0].servingInfo as item}
-                  <li>• {item}</li>
+                {#each projects[0].details as item, i}
+                    {#if i > 0}
+                      <li>- {item}</li>
+                    {/if}
                 {/each}
               </ul>
             {/if}
 
-            {#if projects[0].contributions}
-              <p class="contributions-title"><strong>Notable Contributions:</strong></p>
+            {#if projects[0].extra}
+              <p class="contributions-title"><strong>{projects[0].extra[0]}</strong></p>
               <ul class="contributions-list">
-                {#each projects[0].contributions as contribution}
-                  <li>- {contribution}</li>
+                {#each projects[0].extra as contribution, i}
+                    {#if i > 0}
+                      <li>- {contribution}</li>
+                    {/if}
                 {/each}
               </ul>
             {/if}
