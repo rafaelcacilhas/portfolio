@@ -29,7 +29,6 @@ export default defineConfig({
       ],
     ],
   },
-
   vite: {
     resolve: {
       alias: {
@@ -48,7 +47,9 @@ export default defineConfig({
         'tailwind-variants',
         'svelte-sonner',
         'mode-watcher',
-        '@internationalized/date'
+        '@internationalized/date',
+        '@threlte/core', 
+        '@threlte/extras'
       ]
     },
     ssr: {
@@ -60,7 +61,9 @@ export default defineConfig({
         'tailwind-variants',
         'svelte-sonner',
         'mode-watcher',
-        '@internationalized/date'
+        '@internationalized/date',
+        '@threlte/core', 
+        '@threlte/extras'
       ]
     }
   }})
