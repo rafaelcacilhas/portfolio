@@ -21,12 +21,14 @@ extra:
 - Svelte store keeps in sync with engine 
 ---
 
-Images bellow 
+Images bellow
 
 ![ logo](/assets/projects/images/metrodroneLogo.png)
 ![Contaja logo](/assets/projects/images/contaja.svg)
 
-Images above. A fully interactive metronome and drone generator built with modern web technologies.
+Images above.
+
+A fully interactive metronome and drone generator built with modern web technologies.
 Features real-time audio synthesis, customizable beat patterns, and a responsive interface.
 You can change the beat sound by clicking the beat!
 
