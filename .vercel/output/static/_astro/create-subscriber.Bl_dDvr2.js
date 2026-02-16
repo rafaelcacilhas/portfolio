@@ -1,0 +1,1 @@
+import{r as c,w as i,g as n,aq as f,y as u,P as s,q as o}from"./branches.DoCDyd5i.js";function m(a){let e=0,r=n(0),t;return()=>{c()&&(i(r),f(()=>(e===0&&(t=u(()=>a(()=>s(r)))),e+=1,()=>{o(()=>{e-=1,e===0&&(t?.(),t=void 0,s(r))})})))}}export{m as c};

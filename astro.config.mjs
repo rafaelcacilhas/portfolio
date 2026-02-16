@@ -4,23 +4,14 @@ import mdx from '@astrojs/mdx'
 import smartypants from 'remark-smartypants'
 import remarkGfm from 'remark-gfm'
 import rehypeExternalLinks from 'rehype-external-links'
-import vercel from '@astrojs/vercel/static';
+import vercel from '@astrojs/vercel';
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://www.rafaelcacilhas.xyz',
-  integrations: [mdx(), svelte({
-    include: [ 
-      './src/**/*.svelte',
-      './src/components/metronome/src/**/*.svelte'  // Include submodule!
-    ]
-  })],
+  integrations: [mdx(), svelte()],
   output: 'static',
-  adapter: vercel({
-    includeFiles: ['node_modules/@threlte/**/*'],
-    // Or try excluding them from server bundle
-    excludeFiles: [],
-  }),
+  adapter: vercel(),
   markdown: {
     shikiConfig: {
       theme: 'nord',
@@ -43,31 +34,4 @@ export default defineConfig({
         '$lib': '/src/components/metrodrone/src/lib'
       },
     },
-    optimizeDeps: {
-      include: [
-        'bits-ui',
-        'tailwind-merge',
-        'clsx',
-        'svelte',
-        'svelte/store',
-        '@lucide/svelte',
-        'tailwind-variants',
-        'svelte-sonner',
-        'mode-watcher',
-        '@internationalized/date'
-      ],
-            exclude: ['@threlte/core', '@threlte/extras'] // still exclude from pre-bundle
-    },
-    ssr: {
-      noExternal: [
-        'bits-ui',
-        'tailwind-merge',
-        'clsx',
-        '@lucide/svelte',
-        'tailwind-variants',
-        'svelte-sonner',
-        'mode-watcher',
-        '@internationalized/date'
-      ]
-    }
   }})
