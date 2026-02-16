@@ -23,7 +23,7 @@ extra:
 
 <div style="display:flex; justify-content:center">
   <img
-    src="/public/assets/projects/images/metrodroneLogo.png" 
+    src="/assets/projects/images/metrodroneLogo.png" 
     alt="The Metrodrone logo - a musical note combined with a code caret"
     style="max-width: 100%; height: auto; border-radius: 8px;"
   />
