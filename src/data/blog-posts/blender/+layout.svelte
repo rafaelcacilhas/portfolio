@@ -1,5 +1,6 @@
 <script lang="ts">
-import CanvasPortalTarget from '@/utils/CanvasPortalTarget.svelte'
+  export const ssr = false;
+  import CanvasPortalTarget from '@/utils/CanvasPortalTarget.svelte'
   import { Canvas } from '@threlte/core'
   import type { Snippet } from 'svelte'
 
