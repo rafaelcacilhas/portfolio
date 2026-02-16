@@ -21,6 +21,16 @@ extra:
 - Svelte store keeps in sync with engine 
 ---
 
+![111](/assets/projects/images/metrodroneLogo.png)
+
+<div style="display:flex; justify-content:center">
+  <img
+    src="/assets/projects/images/metrodroneLogo.png"
+    alt="22"
+    style="max-width: 100%; height: auto; border-radius: 8px;"
+  />
+</div>
+
 <div style="display:flex; justify-content:center">
   <img
     src={frontmatter.image}
