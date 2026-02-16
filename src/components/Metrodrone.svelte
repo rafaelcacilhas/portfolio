@@ -1,6 +1,6 @@
 <!-- portfolio/src/components/MetrodroneDemo.svelte -->
 <script lang="ts">
-  // import { MetrodroneApp } from '../components/metrodrone/src/lib/index.js';
+  import { MetrodroneApp } from '../components/metrodrone/src/lib/index.js';
   import { onDestroy } from 'svelte';
   
   let isFullscreen = $state(false);
@@ -66,7 +66,7 @@
 >
   
   <div class="demo-content">
-      <!-- <MetrodroneApp /> -->
+      <MetrodroneApp />
   </div>
   
   {#if isFullscreen && /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)}
