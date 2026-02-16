@@ -1,23 +1,23 @@
 <script  lang="ts">
-    // import type { Snippet } from 'svelte'
+    import type { Snippet } from 'svelte'
 
-    // import { Canvas } from '@threlte/core'
-    // import { T } from '@threlte/core'
+    import { Canvas } from '@threlte/core'
+    import { T } from '@threlte/core'
 
-    // import CanvasPortalTarget from '@/utils/CanvasPortalTarget.svelte'
-    // import CanvasPortal from '@/utils/CanvasPortal.svelte'
+    import CanvasPortalTarget from '@/utils/CanvasPortalTarget.svelte'
+    import CanvasPortal from '@/utils/CanvasPortal.svelte'
 
-    // import Scene from './Scene.svelte'
-    // import Donut from './donut.svelte'
-    // import Character from './character.svelte'
-    // import Girl from './girl.svelte'
+    import Scene from './Scene.svelte'
+    import Donut from './donut.svelte'
+    import Character from './character.svelte'
+    import Girl from './girl.svelte'
 
-    // let { children } = $props()
+    let { children } = $props()
 
 </script>
 
 <section>
-    <!-- <Canvas> 
+    <Canvas> 
         <Donut />
     </Canvas>   
     <p>
@@ -33,7 +33,7 @@
     Thats not terrible, I guess. Going for a more cartoony look we can get something like this
     <Canvas> 
         <Girl />
-    </Canvas>    -->
+    </Canvas>   
 
 </section>
 
