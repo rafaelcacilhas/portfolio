@@ -17,6 +17,9 @@ export default defineConfig({
   })],
   output: 'static',
   adapter: vercel({
+    includeFiles: ['node_modules/@threlte/**/*'],
+    // Or try excluding them from server bundle
+    excludeFiles: [],
   }),
   markdown: {
     shikiConfig: {
@@ -53,6 +56,7 @@ export default defineConfig({
         'mode-watcher',
         '@internationalized/date'
       ],
+            exclude: ['@threlte/core', '@threlte/extras'] // still exclude from pre-bundle
     },
     ssr: {
       noExternal: [
