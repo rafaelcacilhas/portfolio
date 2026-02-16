@@ -1,6 +1,4 @@
 ---
-import MetrodroneImage from '../../assets/projects/images/metrodroneLogo.png';
-
 title: Metrodrone
 publishDate: 02 Feb 2026
 description: A drone slash metronome player
@@ -23,28 +21,10 @@ extra:
 - Svelte store keeps in sync with engine 
 ---
 
-![The Metrodrone logo - a musical note combined with a code caret](/assets/projects/images/metrodroneLogo.png)
-
 <div style="display:flex; justify-content:center">
   <img
-    src="/assets/projects/images/metrodroneLogo.png"
-    alt="222"
-    style="max-width: 100%; height: auto; border-radius: 8px;"
-  />
-</div>
-
-<div style="display:flex; justify-content:center">
-  <img
-    src="./metrodroneLogo.png"
-    alt="33"
-    style="max-width: 100%; height: auto; border-radius: 8px;"
-  />
-</div>
-
-<div style="display:flex; justify-content:center">
-  <img
-    src={MetrodroneImage}
-    alt="55"
+    src={frontmatter.image}
+    alt="The Metrodrone logo - a musical note combined with a code caret"
     style="max-width: 100%; height: auto; border-radius: 8px;"
   />
 </div>
