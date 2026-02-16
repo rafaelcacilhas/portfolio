@@ -35,7 +35,7 @@ const permalink = `${Astro.site.href}projects/${slug}`;
 
       <!-- Extras for specific projects -->
       {slug === 'metrodrone' && 
-        <MetrodroneDemo client:only />
+        <MetrodroneDemo client:only="svelte" />
       }
     </article>
 
