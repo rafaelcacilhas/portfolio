@@ -30,11 +30,12 @@ export default defineConfig({
     ],
   },
   vite: {
+    extensions:['.svelte'],
     resolve: {
       alias: {
         // Map $lib to the metrodrone's lib folder
         '$lib': '/src/components/metrodrone/src/lib'
-      }
+      },
     },
     optimizeDeps: {
       include: [
