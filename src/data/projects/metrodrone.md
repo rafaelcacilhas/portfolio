@@ -21,10 +21,13 @@ extra:
 - Svelte store keeps in sync with engine 
 ---
 
+![The Metrodrone logo - a musical note combined with a code caret](/assets/projects/images/metrodroneLogo.png)
+
+
 <div style="display:flex; justify-content:center">
   <img
-    src="/assets/projects/images/metrodroneLogo.png" 
-    alt="The Metrodrone logo - a musical note combined with a code caret"
+    src="/assets/projects/images/metrodroneLogo.png"
+    alt=""
     style="max-width: 100%; height: auto; border-radius: 8px;"
   />
 </div>
