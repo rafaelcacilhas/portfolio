@@ -47,12 +47,18 @@ export default defineConfig({
         'tailwind-variants',
         'svelte-sonner',
         'mode-watcher',
-        '@internationalized/date',
+        '@internationalized/date'
+      ],
+      exclude:[        
         '@threlte/core', 
         '@threlte/extras'
       ]
     },
     ssr: {
+      external:[        
+        '@threlte/core', 
+        '@threlte/extras'
+      ],
       noExternal: [
         'bits-ui',
         'tailwind-merge',
@@ -61,9 +67,7 @@ export default defineConfig({
         'tailwind-variants',
         'svelte-sonner',
         'mode-watcher',
-        '@internationalized/date',
-        '@threlte/core', 
-        '@threlte/extras'
+        '@internationalized/date'
       ]
     }
   }})
