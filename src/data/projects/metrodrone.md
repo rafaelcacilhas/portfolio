@@ -20,9 +20,6 @@ extra:
 - Audio engine schedule metronome beats
 - Svelte store keeps in sync with engine 
 ---
-![Contaja logo](/assets/projects/images/contaja.svg)
-![Contaja logo](/assets/projects/images/metrodroneLogo.png)
-
 <div style="display:flex; justify-content:center">
   <img
     src="/assets/projects/images/metrodroneLogo.png"
