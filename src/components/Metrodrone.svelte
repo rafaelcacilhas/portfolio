@@ -117,6 +117,10 @@ Code and ideas are on <a href="https://github.com/rafaelcacilhas/metrodrone-web"
     margin: 0 auto;
     padding: 1.5rem;
     color:white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   
   .metrodrone-container.fullscreen {
@@ -150,10 +154,10 @@ Code and ideas are on <a href="https://github.com/rafaelcacilhas/metrodrone-web"
   } */
 
   .demo-content {
+    margin-left: -4rem;
     background: #000;
     min-height: 500px;
-    max-width: 1000px;
-    padding-left: 4rem;
+    min-width:700px;
     width:100%;
     border: 1px solid white;
     display: flex;
@@ -195,8 +199,12 @@ Code and ideas are on <a href="https://github.com/rafaelcacilhas/metrodrone-web"
   
   @media (max-width: 768px) {
     .metrodrone-container {
-      padding: 1rem;
-      margin: 0 1rem;
+      padding: 0;
+      margin: 0;
+    }
+
+    .demo-content {
+      min-width: 0;
     }
   }
 </style>

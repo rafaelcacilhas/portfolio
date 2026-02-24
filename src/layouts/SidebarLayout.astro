@@ -36,15 +36,21 @@ const { title, description, permalink } = Astro.props;
       .sidebar-layout {
         display: flex;
         min-height: 100vh;
+        width: 100%;
       }
 
       .main-content {
-        flex: 1;
+        flex:1;
+        min-width:0;
         position: relative;
         box-sizing: border-box;
         margin-left: var(--sidebar-width, 16rem);
+        padding: 1rem;
         transition: margin-left 0.3s ease;
       }
+
+        :global(.sidebar-collapsed) ~ .main-content {
+        }
 
       @media (max-width: 768px) {
         .sidebar-layout {
@@ -52,7 +58,7 @@ const { title, description, permalink } = Astro.props;
         }
 
         .main-content {
-          margin-left: 0;
+          width:100%;
         }
       }
     </style>
