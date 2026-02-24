@@ -88,14 +88,28 @@
 </button> -->
 
 <p>
-In the past few months I started to read two books on music that totally changed the way I think on the subject, Harmonic Experience by W. A. Mathieu and The Advancing Guitarist by Mick Goodrick.
-They both propose exercises on singing ( with your voice or your instrument) along a drone (i.e., a single constant musical note) to internalize the relationship between each interval and the root.
-Based on this I decided to build a small metronome and drone player to help me on my studies and learn about the web audio api in the process. Its quite simple for now and we only have one sound for the drone; i'll try to synthesize more instruments and put some parameters later.
+I built this to help me practice intervals along a drone, inspired by 
+Harmonic Experience by W. A. Mathieu and The Advancing Guitarist by 
+Mick Goodrick. Both books emphasize singing (with your voice or instrument) 
+over a constant note to internalize intervals. This tool started as a
+ small personal utility and became a deeper dive into the Web Audio API.
 </p>
 
 <p>
-  One day in the middle of coding I watched a video on <a href="https://www.youtube.com/watch?v=VXWvfrmpapI" target="_blank">audio visualizers</a> and was inspired in create a little display for the drone wave.
-  The fact that the Web Audio api contains the Fourier transform of the wave is very interest and fun to play with.
+Under the hood, it's a TypeScript audio engine handling real-time synthesis, 
+with a Svelte frontend for controls. State flows through a reactive store 
+that bridges UI and audio—adjusting a slider updates the engine directly.
+The drone visualization is built using the Web Audio API's Fourier transform,
+giving you a live look at the frequency spectrum as you play (inspired by
+<a href="https://www.youtube.com/watch?v=VXWvfrmpapI" target="_blank">this video</a>).
+</p>
+<br/>
+
+<h3>Whats next</h3>
+<p>
+Taking a short break on this, but v2.0 ideas are floating around: 
+expanding the sound library, adding pattern presets, swing timing, and more. 
+Code and ideas are on <a href="https://github.com/rafaelcacilhas/metrodrone-web" target="_blank">GitHub </a>; feedback and PRs are always welcome.
 </p>
 
 <style>
